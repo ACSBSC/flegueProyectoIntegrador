@@ -42,6 +42,7 @@ input[type=text],input[type=tel],input[type=email],input[type=password], select{
   /* Style the submit button */
   input[type=submit] {
     width: 80%;
+    height: 5%;
     background-color: #FF748F;
     color: white;
     padding: 12px 30px;
