@@ -58,6 +58,7 @@ footer{
     transition: 0.3s;
     padding-bottom: 50px;
     border: 1px solid #C4C4C4;   
+    border-radius: 25px
 }    
 
 #section{
