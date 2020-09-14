@@ -1,0 +1,45 @@
+<DOCTYPE html>
+    <head>
+        <link rel="stylesheet" href="css/logstyle.css">
+        <meta charset="utf-8"/>
+    </head>
+    <body>
+         <div class="container">
+            <h1 class = "title"> Registrate </h1>
+            <form>
+                <div class="row">
+                    <h2 class="subtitle"><label for="fname">Nombre</label></h2>
+                    <input type="text" id="fname" name="nombre" placeholder="Nombre" required>  
+                </div>
+                <div class="row"> 
+                    <h2 class="subtitle"><label for="lname">Rol</label></h2>
+                    <select id="rol" name="rol" required>
+                        <option value="Seleccionar">--Seleccionar--</option>
+                        <option value="adultoMayor">Aduto Mayor</option>
+                        <option value="cuidador">Cuidador</option>
+                    </select>   
+                </div>
+                <div class="row">
+                    <h2 class="subtitle"><label for="country">Teléfono</label></h2>
+                    <input type="tel" id="phone" name="phone" pattern = "([0-9]{2}) [0-9]{4} [0-9]{4}" placeholder="Teléfono">
+                </div>
+                <div class="row">
+                    <h2 class="subtitle"><label for="subject">E-mail</label></h2>
+                    <input type="email" id="email" name="email" placeholder="e-mail">
+                </div>
+                <div class="row">
+                    <h2 class="subtitle"><label for="subject">Contraseña</label></h2>
+                    <input type="password" id="pwd" name="pwd" placeholder="Contraseña">
+                </div>
+                <div class="row">
+                    <div class="place">
+                        <input type="submit" value="Iniciar Sesión">
+                    </div>
+                </div>
+                <div class="row">
+                    <p class="cuenta">¿Ya tienes una cuenta? <a href="">Inicia Sesión</a></p>
+                </div>
+            </form>
+        </div> 
+    </body>
+</html>
