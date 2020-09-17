@@ -1,0 +1,47 @@
+.blue-text {
+  font-family: Roboto;
+  font-size: 40px;
+  line-height: 85px;
+  min-width: 330px;
+  min-height: 79px;
+  background: rgba(113,144,255,1);
+  opacity: 1;
+  display: inline-block;
+  float: left;
+  clear:both;
+  border-top-left-radius: 20px;
+  border-top-right-radius: 20px;
+  border-bottom-left-radius: 20px;
+  border-bottom-right-radius: 20px;
+  overflow: hidden;
+}
+
+.white-text {
+  font-family: Roboto;
+  font-size: 40px;
+  line-height: 85px;
+  min-width: 330px;
+  min-height: 79px;
+  background: rgba(229,229,229,1);
+  opacity: 1;
+  display: inline-block;
+  float: right;
+  clear: both;
+  border-top-left-radius: 20px;
+  border-top-right-radius: 20px;
+  border-bottom-left-radius: 20px;
+  border-bottom-right-radius: 20px;
+  overflow: hidden;
+}
+.text-input {
+  width: 100%;
+  min-height: 80px;
+  background: rgba(229,229,229,1);
+  opacity: 1;
+  margin-bottom: 15px;
+  border-top-left-radius: 20px;
+  border-top-right-radius: 20px;
+  border-bottom-left-radius: 20px;
+  border-bottom-right-radius: 20px;
+  overflow: hidden;
+}

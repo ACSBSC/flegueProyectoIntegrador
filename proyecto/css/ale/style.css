@@ -1,0 +1,264 @@
+body{
+    
+    background: rgb(121,151,255);
+    /*     background: linear-gradient(180deg, #33B6FF 0%, rgba(255, 255, 255, 0) 100%), #7291FF;margin: 0;
+ */    padding: 0;
+    text-decoration:none;
+    overflow-x: hidden;
+}
+
+
+
+section {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    overflow-x: hidden;
+    overflow-y: hidden;
+    
+    
+}
+
+section div h2 {
+    color: white;
+    font-family: Roboto;
+font-style: normal;
+font-weight: bold;
+font-size: 40px;
+line-height: 47px;
+}
+
+img {
+
+    width: 15rem;
+    height: auto;
+    margin: 3rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    left:50px;
+
+}
+
+
+
+p {
+    color: white;
+    font-family: Roboto;
+font-style: normal;
+font-weight: normal;
+font-size: 18px;
+line-height: 21px;
+}
+
+h3 {
+color: white;
+font-family: Roboto;
+font-style: normal;
+font-weight: bold;
+font-size: 30px;
+line-height: 47px;
+text-decoration: white;
+text-align: center;
+margin-bottom: 3rem;
+background-color: none ;
+border-style: none;
+
+}
+
+.tag {
+    background: #FFFFFF;
+    border: 4px solid #FFFFFF;
+    box-sizing: border-box;
+    border-radius: 30px;
+    width: 10rem;
+    height: auto;
+    color: black;
+    text-decoration: none;
+    width: 262px;
+    height: 57px;
+    text-align: center;
+    padding-top: 5px;
+
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 25px;
+
+}
+
+a{
+    color: white;
+}
+.circle{
+    margin-top: 7rem;
+    border-radius: 50%;
+    background-color: white;
+    width: 233px;
+    height: 235px;
+    background: #FFFFFF;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    z-index: 3;
+
+}
+
+h4{
+    color: white;
+font-family: Roboto;
+font-style: normal;
+font-weight: bold;
+font-size: 30px;
+line-height: 47px;
+
+width: 20rem;
+text-align: center;
+top:33%;
+
+}
+
+hr{
+    color: white;
+}
+
+.section-header{
+    position: relative;
+    background-color: white;
+   
+
+}
+.custom-shape-divider-top-1600042292 {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    overflow: hidden;
+    line-height: 0;
+}
+
+.custom-shape-divider-top-1600042292 svg {
+    position: relative;
+    display: block;
+    width: calc(100% + 1.3px);
+    height:370px;
+}
+
+.custom-shape-divider-top-1600042292 .shape-fill {
+    fill:  #33B6FF;
+}
+
+.tarjetas{
+margin: 3rem;
+background-color: #FFFFFF;
+border: 1px solid #C4C4C4;
+box-sizing: border-box;
+box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.3);
+border-radius: 20px;
+display: flex;
+flex-direction: row;
+justify-content: space-evenly;
+align-items: center;
+padding: 2rem;
+}
+
+.indicadores {
+    color: black;
+    text-align: left;
+    margin: 4px;
+    padding: 5px;
+}
+
+.indicadores-min {
+    color: black;
+    text-align: left;
+    font-size: 18px;
+    margin: 4px;
+    padding: 5px;
+    font-weight: lighter;
+}
+
+.kpi{
+    width: 66px;
+height: 66px;
+left: 270px;
+top: 317px;
+
+background: #88DB91;
+border-radius: 50%;
+display: flex;
+justify-content: center;
+align-items: center;
+}
+
+.kpi-red{
+    width: 66px;
+height: 66px;
+left: 270px;
+top: 317px;
+
+background: red;
+border-radius: 50%;
+display: flex;
+justify-content: center;
+align-items: center;
+}
+
+.app-menu {
+    background-color: white;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-direction: row;
+    
+    margin: 50px;
+   
+}
+
+.app-menu>a{
+    max-width: 100%;
+    max-height: 33%;
+    background-color: white;
+}
+
+.img-menu{
+    width: 3rem;
+    height: auto;
+    margin: 0;
+}
+
+@media screen and (max-width: 375px) {
+    .app-menu {
+        background-color: white;
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        flex-direction: row;
+       
+        margin: 0;
+        padding: 0;
+        margin: 50px;
+    }
+    .app-menu>a{
+        max-width: 100%;
+        max-height: 33%;
+        background-color: white;
+    }
+    .img-menu{
+        width: 2rem;
+        height: auto;
+        margin: 0;
+    }
+}
+
+.scale  {
+    width: 50%;
+}
+
+.scale-img{
+        width: 100%;
+        margin: 0;
+       
+}
+
+
+
