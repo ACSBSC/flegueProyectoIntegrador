@@ -115,6 +115,7 @@
 
 #img_footer{
     display: inline;
+    max-width: 135px;
 }
 
 footer{
