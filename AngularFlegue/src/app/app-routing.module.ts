@@ -1,9 +1,9 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 
-import {AppointmentComponent} from './components/appointment/appointment.component';
-import {AppointmentFormComponent} from './components/appointment-form/appointment-form.component';
-import {AppointmentFormEditComponent} from './components/appointment-form-edit/appointment-form-edit.component';
+import {AppointmentComponent} from './components/appointment/appointment.component';//revisar vista
+import {AppointmentFormComponent} from './components/appointment-form/appointment-form.component';//revisar vista
+import {AppointmentFormEditComponent} from './components/appointment-form-edit/appointment-form-edit.component';//revisar vista
 import {AppointmentShowComponent} from './components/appointment-show/appointment-show.component';
 import {ChatBotComponent} from './components/chat-bot/chat-bot.component';//revisar vista
 import {EmergencyButtonComponent} from './components/emergency-button/emergency-button.component';
