@@ -1,1 +1,26 @@
-<p>login works!</p>
+
+<body>
+    <p>login works!</p>
+    <div class="container">
+      <h1 class = "title"> Inicia Sesión </h1>
+        <img src="img/vision.png" alt="lentes" class="img_inicio">
+      <form>
+          <div class="row">
+              <h2 class="subtitle"><label for="fname">E-mail o Teléfono</label></h2>
+              <input type="text" id="fname" name="autenticación" placeholder="E-mail o Teléfono" required>
+          </div>
+          <div class="row">
+              <h2 class="subtitle"><label for="subject">Contraseña</label></h2>
+              <input type="password" id="pwd" name="pwd" placeholder="Contraseña">
+          </div>
+          <div class="row">
+              <div class="place">
+                  <button type="submit" onclick="window.location.href='Boton_emergencia.html'">Iniciar Sesión</button>
+              </div>
+          </div>
+          <div class="row">
+              <p class="cuenta">¿No tienes una cuenta? <a href="">Registrate</a></p>
+          </div>
+      </form>
+  </div>
+</body>
