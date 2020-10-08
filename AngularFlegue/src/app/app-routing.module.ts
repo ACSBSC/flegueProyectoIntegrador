@@ -14,7 +14,7 @@ import {MedicinasComponent} from './components/medicinas/medicinas.component';
 import {MedicinasFormComponent} from './components/medicinas-form/medicinas-form.component';
 import {MedicinasFormEditComponent} from './components/medicinas-form-edit/medicinas-form-edit.component';
 import {MedicinasShowComponent} from './components/medicinas-show/medicinas-show.component';
-import {RegisterComponent} from './components/register/register.component';//revisar vista
+import {RegisterComponent} from './components/register/register.component';//100% DONE
 import {ResumenUsuarioComponent} from './components/resumen-usuario/resumen-usuario.component';
 import {SelectUserComponent} from './components/select-user/select-user.component';
 import {SignosVitalesComponent} from './components/signos-vitales/signos-vitales.component';

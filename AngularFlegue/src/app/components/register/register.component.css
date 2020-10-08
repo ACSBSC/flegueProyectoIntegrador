@@ -1,21 +1,23 @@
 .title{
   text-align: center;
   font-size: 40px;
-  margin-top: 55px;
+  margin-top: 0px;
   color: #33B6FF;
 }
 .subtitle{
   text-align: center;
   color: #0b6ae6;
-  font-size: 30px;
+  font-size: 25px;
+  margin:0;
 }
 .place{
   text-align: center;
   margin-top: 25px;
-  margin-left: 15%;
+  margin-left: 10%;
+  margin-right: 10%;
 }
 .cuenta{
-  font-size: 25px;
+  font-size: 20px;
   color: #9E9292;
 }
 .img_inicio{
@@ -26,11 +28,12 @@ input[type=text],input[type=tel],input[type=email],input[type=password], select{
     height: 9%;
     padding: 20px;
     resize: vertical;
-    font-size: 25px;
+    font-size: 18px;
     background: #FFFFFF;
     border: 1px solid #33B6FF;
     box-sizing: border-box;
     border-radius: 30px;
+    margin:0;
   }
 
   /* Style the label to display next to the inputs */
@@ -45,13 +48,14 @@ input[type=text],input[type=tel],input[type=email],input[type=password], select{
     height: 5%;
     background-color: #FF748F;
     color: white;
-    padding: 12px 30px;
+    padding: 10px 0px;
+    margin: 0;
+
     border: none;
     box-sizing: border-box;
     border-radius: 30px;
     cursor: pointer;
-    float: left;
-    font-size: 25px;
+    font-size: 22px;
   }
 
   /* Style the container */
@@ -76,7 +80,7 @@ input[type=text],input[type=tel],input[type=email],input[type=password], select{
 
   }
   .row{
-    margin-top: 50px;
+    margin-top: 0px;
   }
 
 

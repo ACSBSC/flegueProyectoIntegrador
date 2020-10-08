@@ -1,6 +1,5 @@
 
 <body>
-  <p>register works!</p>
   <div class="container">
     <h1 class = "title"> Registrate </h1>
     <form>
@@ -30,13 +29,13 @@
         </div>
         <div class="row">
             <div class="place">
-                <button type="submit" onclick="window.location.href='boton_emergencia.html'">Iniciar Sesión</button>
+                <button type="submit" [routerLink]="'/emergency-button'">Iniciar Sesión</button>
 
             </div>
         </div>
         <div class="row">
-            <p class="cuenta">¿Ya tienes una cuenta? <a href="LogIn.html">Inicia Sesión</a></p>
-            <a href="Seleccionar_usuario.html">Abuelito</a>
+            <p class="cuenta">¿Ya tienes una cuenta? <a routerLink="/log-in" routerLinkActive="active">Inicia Sesión</a></p>
+            <a routerLink="/select-user" routerLinkActive="active">Abuelito</a>
         </div>
     </form>
 </div>
