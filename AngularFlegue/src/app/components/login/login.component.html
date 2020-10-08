@@ -1,9 +1,8 @@
 
 <body>
-    <p>login works!</p>
     <div class="container">
       <h1 class = "title"> Inicia Sesión </h1>
-        <img src="img/vision.png" alt="lentes" class="img_inicio">
+        <img src="../../assets/images/vision.png" alt="lentes" class="img_inicio">
       <form>
           <div class="row">
               <h2 class="subtitle"><label for="fname">E-mail o Teléfono</label></h2>
@@ -15,11 +14,11 @@
           </div>
           <div class="row">
               <div class="place">
-                  <button type="submit" onclick="window.location.href='Boton_emergencia.html'">Iniciar Sesión</button>
+                  <button type="submit" [routerLink]="'/emergency-button'">Iniciar Sesión</button>
               </div>
           </div>
           <div class="row">
-              <p class="cuenta">¿No tienes una cuenta? <a href="">Registrate</a></p>
+              <p class="cuenta">¿No tienes una cuenta? <a routerLink="/register" routerLinkActive="active">Registrate</a></p>
           </div>
       </form>
   </div>
