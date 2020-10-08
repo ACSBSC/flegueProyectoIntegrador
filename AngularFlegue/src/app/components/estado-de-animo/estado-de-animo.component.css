@@ -1,0 +1,259 @@
+.title{
+  text-align: center;
+  font-size: 40px;
+  margin-top: 55px;
+  color: #33B6FF;
+}
+.subtitle{
+  text-align: center;
+  color: #0b6ae6;
+  font-size: 30px;
+}
+.place{
+  text-align: center;
+  margin-top: 25px;
+  margin-left: 15%;
+}
+.cuenta{
+  font-size: 25px;
+  color: #9E9292;
+}
+.img_inicio{
+  width: 50%;
+}
+input[type=text],input[type=tel],input[type=email],input[type=password], select{
+    width: 80%;
+    height: 9%;
+    padding: 20px;
+    resize: vertical;
+    font-size: 25px;
+    background: #FFFFFF;
+    border: 1px solid #33B6FF;
+    box-sizing: border-box;
+    border-radius: 30px;
+  }
+
+  /* Style the label to display next to the inputs */
+  label {
+    padding: 12px 12px 12px 0;
+    display: inline-block;
+  }
+
+  /* Style the submit button */
+  input[type=submit] {
+    width: 80%;
+    height: 5%;
+    background-color: #FF748F;
+    color: white;
+    padding: 12px 30px;
+    border: none;
+    box-sizing: border-box;
+    border-radius: 30px;
+    cursor: pointer;
+    float: left;
+    font-size: 25px;
+  }
+
+  /* Style the container */
+  .container {
+    border-radius: 5px;
+    background-color: white;
+    padding: 20px;
+    text-align: center;
+
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: normal;
+
+    line-height: 21px;
+
+  }
+
+  /* Clear floats after the columns */
+  .row:after {
+    content: "";
+    display: table;
+    clear: both;
+
+  }
+  .row{
+    margin-top: 50px;
+  }
+
+
+
+#ellipse_blue{
+  position: absolute;
+  width: 100%;
+  height: 30%;
+  left: 0%;
+  top: -10%;
+
+  background: linear-gradient(180deg, #33B6FF 0%, rgba(255, 255, 255, 0) 100%), #7291FF;
+  border-bottom-right-radius: 80% 50%;
+  border-bottom-left-radius: 80% 50%;
+
+  font-size: 35px;
+  color:white;
+}
+
+.circle{
+  background-color: white;
+  border-radius: 50%;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  width: 300px;
+  height: 300px;
+  margin-left: 34%;
+}
+
+
+#img_icon{
+  width: 70%;
+  margin-top: 10%;
+}
+
+
+#img_footer{
+  display: inline;
+  max-width: 135px;
+}
+
+footer{
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  background-color: white;
+  color: white;
+  text-align: center;
+}
+
+.card_title{
+  position: relative;
+  font-weight: bold;
+  font-size: 50px;
+  margin-top: 100px;
+}
+
+.info{
+  margin-top: 600px;
+}
+
+.card{
+  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+  transition: 0.3s;
+  padding-bottom: 50px;
+  border: 1px solid #C4C4C4;
+  border-radius: 45px;
+  margin-top: 50px;
+}
+
+#section{
+  font-size: 45px;
+  margin-top: 50px;
+}
+
+
+#state, #medicine{
+  width: 250px;
+  height: 250px;
+  margin-left: 550px;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 70px;
+}
+#medicine{
+  width: 250px;
+  height: 250px;
+  margin-left: 550px;
+  background-color:white;
+
+
+  justify-content: left;
+  align-items: left;
+  font-size: 50px;
+  line-height: 50px;
+}
+
+.left{
+  float:left;
+  margin-left: 100px;
+  margin-top: 100px;
+}
+.right{
+  float:right;
+  margin-right: 100px;
+  top: 0;
+
+}
+#measure{
+  position:absolute;
+  margin-left:100px;
+  margin-top: 120px;
+}
+
+.scale-img{
+  width: 100%;
+  margin-top: 50px;
+
+}
+
+
+.app-menu {
+  background-color: white;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  flex-direction: row;
+
+  margin: 50px;
+
+}
+
+.app-menu>a{
+  max-width: 100%;
+  max-height: 33%;
+  background-color: white;
+}
+
+.img-menu{
+  width: 3rem;
+  height: auto;
+  margin: 0;
+}
+
+@media screen and (max-width: 375px) {
+  .app-menu {
+      background-color: white;
+      display: flex;
+      justify-content: space-around;
+      align-items: center;
+      flex-direction: row;
+
+      margin: 0;
+      padding: 0;
+      margin: 50px;
+  }
+  .app-menu>a{
+      max-width: 100%;
+      max-height: 50%;
+      background-color: white;
+  }
+  .img-menu{
+      width: 3rem;
+      height: auto;
+      margin: 0;
+  }
+  .scale  {
+      width: 50%;
+  }
+
+  .scale-img{
+          width: 100%;
+          margin: 0;
+
+  }
+}
+
