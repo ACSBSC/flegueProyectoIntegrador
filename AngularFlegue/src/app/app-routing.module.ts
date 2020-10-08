@@ -4,10 +4,10 @@ import { Routes, RouterModule } from '@angular/router';
 import {AppointmentComponent} from './components/appointment/appointment.component';//revisar vista
 import {AppointmentFormComponent} from './components/appointment-form/appointment-form.component';//revisar vista
 import {AppointmentFormEditComponent} from './components/appointment-form-edit/appointment-form-edit.component';//revisar vista
-import {AppointmentShowComponent} from './components/appointment-show/appointment-show.component';
+import {AppointmentShowComponent} from './components/appointment-show/appointment-show.component';//revisar vista
 import {ChatBotComponent} from './components/chat-bot/chat-bot.component';//revisar vista
-import {EmergencyButtonComponent} from './components/emergency-button/emergency-button.component';
-import {EstadoDeAnimoComponent} from './components/estado-de-animo/estado-de-animo.component';
+import {EmergencyButtonComponent} from './components/emergency-button/emergency-button.component';//revisar vista
+import {EstadoDeAnimoComponent} from './components/estado-de-animo/estado-de-animo.component';// revisar vista
 import {InicioComponent} from './components/inicio/inicio.component';//revisar vista
 import {LoginComponent} from './components/login/login.component';//revisar vista
 import {MedicinasComponent} from './components/medicinas/medicinas.component';
