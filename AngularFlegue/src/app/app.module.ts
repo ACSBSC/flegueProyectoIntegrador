@@ -26,6 +26,9 @@ import { UserDeleteComponent } from './components/user-delete/user-delete.compon
 import { UserShowComponent } from './components/user-show/user-show.component';
 import { SignosVitalesHistorialComponent } from './components/signos-vitales-historial/signos-vitales-historial.component';
 
+import { AngularFireModule } from '@angular/fire';
+import { environment } from '../environments/environment';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -54,7 +57,8 @@ import { SignosVitalesHistorialComponent } from './components/signos-vitales-his
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    AngularFireModule.initializeApp(environment.firebase)
   ],
   providers: [],
   bootstrap: [AppComponent]

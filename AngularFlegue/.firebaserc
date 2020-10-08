@@ -1,0 +1,11 @@
+{
+  "targets": {
+    "flegue-464f2": {
+      "hosting": {
+        "AngularFlegue": [
+          "flegue-464f2"
+        ]
+      }
+    }
+  }
+}
