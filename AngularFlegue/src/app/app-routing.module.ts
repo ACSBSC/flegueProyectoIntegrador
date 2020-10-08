@@ -8,8 +8,8 @@ import {AppointmentShowComponent} from './components/appointment-show/appointmen
 import {ChatBotComponent} from './components/chat-bot/chat-bot.component';//revisar vista
 import {EmergencyButtonComponent} from './components/emergency-button/emergency-button.component';//revisar vista
 import {EstadoDeAnimoComponent} from './components/estado-de-animo/estado-de-animo.component';// revisar vista
-import {InicioComponent} from './components/inicio/inicio.component';//revisar vista
-import {LoginComponent} from './components/login/login.component';//revisar vista
+import {InicioComponent} from './components/inicio/inicio.component';//100% DONE
+import {LoginComponent} from './components/login/login.component';//100% DONE
 import {MedicinasComponent} from './components/medicinas/medicinas.component';
 import {MedicinasFormComponent} from './components/medicinas-form/medicinas-form.component';
 import {MedicinasFormEditComponent} from './components/medicinas-form-edit/medicinas-form-edit.component';

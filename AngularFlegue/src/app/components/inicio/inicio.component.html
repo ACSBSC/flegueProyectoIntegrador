@@ -1,25 +1,27 @@
-<p>inicio works!</p>
 
-<section>
-    <div>
-        <h2>Flegue</h2>
-    </div>
-    <div>
+<body>
+  <section>
+      <div>
+          <h2>Flegue</h2>
+      </div>
+      <div>
 
-            <img src="img/seguro-de-salud.png" alt="">
+              <img src="../../assets/images/seguro-de-salud.png" alt="">
 
-    </div>
+      </div>
 
-        <a class="tag" href="LogIn.html">Iniciar Sesión</a>
+          <a class="tag" routerLink="/log-in" routerLinkActive="active">Iniciar Sesión</a>
 
-    <div>
-        <p>¿Aun no tienes cuenta?</p>
+      <div>
+          <p>¿Aun no tienes cuenta?</p>
 
-        <h3>
-            <a href="Registro.html">
-                Registrate
+          <h3>
+              <a routerLink="/register" routerLinkActive="active">
+                  Registrate
 
-            </a>
-        </h3>
-    </div>
-</section>
+              </a>
+          </h3>
+      </div>
+  </section>
+</body>
+<router-outlet></router-outlet>
