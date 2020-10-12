@@ -5,8 +5,8 @@ import {AppointmentComponent} from './components/appointment/appointment.compone
 import {AppointmentFormComponent} from './components/appointment-form/appointment-form.component';//revisar vista
 import {AppointmentFormEditComponent} from './components/appointment-form-edit/appointment-form-edit.component';//revisar vista
 import {AppointmentShowComponent} from './components/appointment-show/appointment-show.component';//revisar vista
-import {ChatBotComponent} from './components/chat-bot/chat-bot.component';//revisar vista
-import {EmergencyButtonComponent} from './components/emergency-button/emergency-button.component';//revisar vista
+import {ChatBotComponent} from './components/chat-bot/chat-bot.component';//100% DONE
+import {EmergencyButtonComponent} from './components/emergency-button/emergency-button.component';//100% DONE
 import {EstadoDeAnimoComponent} from './components/estado-de-animo/estado-de-animo.component';// revisar vista
 import {InicioComponent} from './components/inicio/inicio.component';//100% DONE
 import {LoginComponent} from './components/login/login.component';//100% DONE
