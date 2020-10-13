@@ -7,7 +7,7 @@ import {AppointmentFormEditComponent} from './components/appointment-form-edit/a
 import {AppointmentShowComponent} from './components/appointment-show/appointment-show.component';//revisar vista
 import {ChatBotComponent} from './components/chat-bot/chat-bot.component';//100% DONE
 import {EmergencyButtonComponent} from './components/emergency-button/emergency-button.component';//100% DONE
-import {EstadoDeAnimoComponent} from './components/estado-de-animo/estado-de-animo.component';// revisar vista
+import {EstadoDeAnimoComponent} from './components/estado-de-animo/estado-de-animo.component';// 100% DONE
 import {InicioComponent} from './components/inicio/inicio.component';//100% DONE
 import {LoginComponent} from './components/login/login.component';//100% DONE
 import {MedicinasComponent} from './components/medicinas/medicinas.component';
