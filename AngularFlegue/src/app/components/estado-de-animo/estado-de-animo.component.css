@@ -11,8 +11,9 @@
 }
 .place{
   text-align: center;
-  margin-top: 25px;
-  margin-left: 15%;
+  margin-top: -10px;
+  margin-left: 20%;
+
 }
 .cuenta{
   font-size: 25px;
@@ -38,6 +39,15 @@ input[type=text],input[type=tel],input[type=email],input[type=password], select{
     padding: 12px 12px 12px 0;
     display: inline-block;
   }
+  h1{
+    font-size: 20px;
+  }
+  h2{
+    font-size: 15px;
+  }
+  body{
+    height: 100%;
+  }
 
   /* Style the submit button */
   input[type=submit] {
@@ -52,6 +62,7 @@ input[type=text],input[type=tel],input[type=email],input[type=password], select{
     cursor: pointer;
     float: left;
     font-size: 25px;
+    margin-bottom: 35px;
   }
 
   /* Style the container */
@@ -66,7 +77,6 @@ input[type=text],input[type=tel],input[type=email],input[type=password], select{
     font-weight: normal;
 
     line-height: 21px;
-
   }
 
   /* Clear floats after the columns */
@@ -82,30 +92,29 @@ input[type=text],input[type=tel],input[type=email],input[type=password], select{
 
 
 
-#ellipse_blue{
-  position: absolute;
-  width: 100%;
-  height: 30%;
-  left: 0%;
-  top: -10%;
+  #ellipse_blue{
+    position: absolute;
+    width: 100%;
+    height: 30%;
+    left: 0%;
+    top: -10%;
 
-  background: linear-gradient(180deg, #33B6FF 0%, rgba(255, 255, 255, 0) 100%), #7291FF;
-  border-bottom-right-radius: 80% 50%;
-  border-bottom-left-radius: 80% 50%;
+    background: linear-gradient(180deg, #33B6FF 0%, rgba(255, 255, 255, 0) 100%), #7291FF;
+    border-bottom-right-radius: 80% 50%;
+    border-bottom-left-radius: 80% 50%;
 
-  font-size: 35px;
-  color:white;
-}
+    font-size: 35px;
+    color:white;
+  }
 
 .circle{
   background-color: white;
   border-radius: 50%;
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-  width: 300px;
-  height: 300px;
-  margin-left: 34%;
+  width: 150px;
+  height: 150px;
+  margin-left: 30%;
 }
-
 
 #img_icon{
   width: 70%;
@@ -113,15 +122,17 @@ input[type=text],input[type=tel],input[type=email],input[type=password], select{
 }
 
 
+/* FOOTER */
 #img_footer{
   display: inline;
-  max-width: 135px;
+  max-width: 50px;
+
 }
 
 footer{
   position: fixed;
-  left: 0;
-  bottom: 0;
+  left: 0px;
+
   width: 100%;
   background-color: white;
   color: white;
@@ -136,7 +147,8 @@ footer{
 }
 
 .info{
-  margin-top: 600px;
+  margin-top: 225px;
+  margin-left:-20px;
 }
 
 .card{
@@ -144,25 +156,30 @@ footer{
   transition: 0.3s;
   padding-bottom: 50px;
   border: 1px solid #C4C4C4;
-  border-radius: 45px;
-  margin-top: 50px;
+  border-radius: 30px;
+  margin-top: 20px;
+  width: 350px;
+
 }
 
 #section{
-  font-size: 45px;
-  margin-top: 50px;
+  max-height: 20px;
+  margin-top: 30px;
 }
 
 
-#state, #medicine{
-  width: 250px;
-  height: 250px;
-  margin-left: 550px;
+#state{
+  width: 100px;
+  height: 100px;
+  margin-left: 230px;
 
   display: flex;
   justify-content: center;
   align-items: center;
-  font-size: 70px;
+
+}
+#state img{
+  margin-top:-57px;
 }
 #medicine{
   width: 250px;
@@ -190,8 +207,9 @@ footer{
 }
 #measure{
   position:absolute;
-  margin-left:100px;
-  margin-top: 120px;
+  margin-left:25px;
+  margin-top: 10px;
+  font-size: 16px;
 }
 
 .scale-img{

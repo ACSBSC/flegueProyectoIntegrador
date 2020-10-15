@@ -315,22 +315,22 @@
 
 #img-boton{
   position: relative;
-;
+  width: 75%;
   top: 10%;
   left: 11%;
 }
 
 #flegue_view_bienvenido{
   position: absolute;
-  width: 60%;
-  height: 56px;
-  left: 25%;
-  top: 10%;
+
+  height: 20px;
+  left: 20%;
+  top: 8%;
 
   font-family: Roboto;
   font-style: normal;
   font-weight: bold;
-  font-size: 550%;
+  font-size: 280%;
   line-height: 100px;
   display: flex;
   align-items: center;
@@ -344,14 +344,14 @@
   position: absolute;
   width: 90%;
   height: 56px;
-  left: 10%;
-  top: 65%;
+  left: 5%;
+  top: 67%;
 
   font-family: Roboto;
   font-style: normal;
   font-weight: bold;
-  font-size: 550%;
-  line-height: 100px;
+  font-size: 240%;
+  line-height: 50px;
   display: flex;
   align-items: center;
   text-align: center;
@@ -391,7 +391,7 @@
 
 #img_footer{
   display: inline;
-  max-width: 135px;
+  max-width: 53px;
 }
 
 footer{
