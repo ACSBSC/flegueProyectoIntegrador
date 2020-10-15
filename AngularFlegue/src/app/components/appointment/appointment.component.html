@@ -5,15 +5,15 @@
 <p>appointment works!</p>
 	<div class="container">
 		<div id="ellipse_blue">
-            <h2 style="margin-top:280px;">Flegue</h2>
-        	<h1 style="margin-top:100px;">Citas</h1>
-            <div class="circle"><img src="img/v52_121.png" alt="salud" id="img_icon"></div>
+            <h2 style="margin-top:100px;">Flegue</h2>
+        	<h1>Citas</h1>
+            <div class="circle"><img src="../../assets/images/v52_121.png" alt="salud" id="img_icon"></div>
         </div>
 		<div class = "info">
-			<a href="createAppointment.html"><div class="red-button">
+			<a routerLink="/appointment-form"><div class="red-button">
 				<span>Agregar cita</span>
 			</div></a>
-			<a href="citaindividual.html">
+			<a routerLink="/appointment-show">
 			<div class="doc-card">
 				<div class="doc-img"></div>
 				<span class="doc-name">Dr. Laura López</span><br>
@@ -30,13 +30,13 @@
 
 		<footer>
             <div class="imgs">
-                <a href="signos-vitales.html"><img src="img/heart.png" alt="salud" id="img_footer"></a>
-				<a href="medicamentos.html"><img src="img/pill.png" alt="salud" id="img_footer"></a>
-				<a href="doctores.html"><img src="img/scope.png" alt="salud" id="img_footer"></a>
-				<a href="Boton_emergencia.html"><img src="img/llamada-de-emergencia.png" alt="salud" id="img_footer"></a>
-				<a href="ResumenUsuario.html"><img src="img/tabla_f.png" alt="salud" id="img_footer"></a>
-				<a href="chatbot.html"><img src="img/chatbot.png" alt="salud" id="img_footer"></a>
-				<a href="mood.html"><img src="img/emotion.png" alt="salud" id="img_footer"></a>
+              <a routerLink="/signos-vitales-button"><img src="../../assets/images/heart.png" alt="salud" id="img_footer"></a>
+              <a routerLink="/medicinas"><img src="../../assets/images/pill.png" alt="salud" id="img_footer"></a>
+              <a routerLink="/appointment"><img src="../../assets/images/scope.png" alt="salud" id="img_footer"></a>
+              <a routerLink="/emergency-button"><img src="../../assets/images/llamada-de-emergencia.png" alt="salud" id="img_footer"></a>
+              <a routerLink="/resumen-usuario"><img src="../../assets/images/tabla_f.png" alt="salud" id="img_footer"></a>
+              <a routerLink="/chatbot"><img src="../../assets/images/chatbot.png" alt="salud" id="img_footer"></a>
+              <a routerLink="/estado-animo"><img src="../../assets/images/emotion.png" alt="salud" id="img_footer"></a>
             </div>
         </footer>
 	</div>
@@ -45,3 +45,4 @@
 <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+<router-outlet></router-outlet>
