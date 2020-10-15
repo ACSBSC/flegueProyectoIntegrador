@@ -1,0 +1,153 @@
+body{
+	height: 100%;
+}
+html {
+    height: 100%;
+}
+
+#ellipse_blue{
+  position: absolute;
+  width: 100%;
+  height: 30%;
+  left: 0%;
+  top: -10%;
+
+  background: linear-gradient(180deg, #33B6FF 0%, rgba(255, 255, 255, 0) 100%), #7291FF;
+  border-bottom-right-radius: 80% 50%;
+  border-bottom-left-radius: 80% 50%;
+
+  font-size: 35px;
+  color:white;
+}
+
+#img_icon{
+  width: 70%;
+  margin-top: 10%;
+}
+
+.circle{
+  background-color: white;
+  border-radius: 50%;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  width: 100px;
+  height: 100px;
+  margin-left: 35%;
+}
+
+.red-button {
+  width: 100%;
+  min-height: 75px;
+  background: rgba(255,116,143,1);
+  color: rgba(255,255,255,1);
+  font-family: Roboto;
+  font-weight: Bold;
+  opacity: 1;
+  text-align: center;
+  margin: auto;
+  margin-bottom: -50px;
+  border: 4px solid rgba(255,116,143,1);
+  border-top-left-radius: 30px;
+  border-top-right-radius: 30px;
+  border-bottom-left-radius: 30px;
+  border-bottom-right-radius: 30px;
+  overflow: hidden;
+  line-height: 60px;
+}
+
+/* Style the container */
+.container {
+  border-radius: 5px;
+  background-color: white;
+  padding: 20px;
+  text-align: center;
+
+  font-family: Roboto;
+  font-style: normal;
+  font-weight: normal;
+
+  line-height: 21px;
+
+
+}
+
+  /* Clear floats after the columns */
+  .row:after {
+    content: "";
+    display: table;
+    clear: both;
+
+  }
+  .row{
+    margin-top: 50px;
+    text-align: center;
+  }
+
+  .subtitle{
+    text-align: center;
+    color: #0b6ae6;
+    font-size: 25px;
+  }
+
+  .group {
+    margin-top:35%;
+}
+
+.info{
+  margin-bottom: 30px;
+  margin: 220px auto;
+}
+
+.place{
+  text-align: center;
+  margin-top: 25px;
+  margin-left: 15%;
+}
+
+/* Style the label to display next to the inputs */
+label {
+  padding: 12px 12px 12px 0;
+  display: inline-block;
+}
+
+/* Style the submit button */
+input[type=submit] {
+  width: 80%;
+  height: 5%;
+  background-color: #FF748F;
+  color: white;
+  padding: 12px 30px;
+  border: none;
+  box-sizing: border-box;
+  border-radius: 30px;
+  cursor: pointer;
+  float: left;
+  font-size: 25px;
+}
+
+.red-button {
+  width: 100%;
+  min-height: 75px;
+  background: rgba(255,116,143,1);
+  color: rgba(255,255,255,1);
+  font-family: Roboto;
+  font-weight: Bold;
+  opacity: 1;
+  text-align: center;
+  margin: auto;
+  margin-bottom: -100px;
+  border: 4px solid rgba(255,116,143,1);
+  border-top-left-radius: 30px;
+  border-top-right-radius: 30px;
+  border-bottom-left-radius: 30px;
+  border-bottom-right-radius: 30px;
+  overflow: hidden;
+  line-height: 60px;
+}
+
+/* Responsive layout - when the screen is less than 600px wide, make the two columns stack on top of each other instead of next to each other */
+@media screen and (max-width: 600px) {
+  button[type=submit] {
+    width: 100%;
+    margin-top: 0px;
+  }
+}
