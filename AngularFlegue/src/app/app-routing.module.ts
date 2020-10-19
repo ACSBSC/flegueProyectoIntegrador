@@ -1,16 +1,16 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 
-import {AppointmentComponent} from './components/appointment/appointment.component';//revisar vista
-import {AppointmentFormComponent} from './components/appointment-form/appointment-form.component';//revisar vista
-import {AppointmentFormEditComponent} from './components/appointment-form-edit/appointment-form-edit.component';//revisar vista
-import {AppointmentShowComponent} from './components/appointment-show/appointment-show.component';//revisar vista
+import {AppointmentComponent} from './components/appointment/appointment.component';// 100% DONE
+import {AppointmentFormComponent} from './components/appointment-form/appointment-form.component';//100% DONE
+import {AppointmentFormEditComponent} from './components/appointment-form-edit/appointment-form-edit.component';//100% DONE
+import {AppointmentShowComponent} from './components/appointment-show/appointment-show.component';//100% DONE
 import {ChatBotComponent} from './components/chat-bot/chat-bot.component';//100% DONE
 import {EmergencyButtonComponent} from './components/emergency-button/emergency-button.component';//100% DONE
 import {EstadoDeAnimoComponent} from './components/estado-de-animo/estado-de-animo.component';// 100% DONE
 import {InicioComponent} from './components/inicio/inicio.component';//100% DONE
 import {LoginComponent} from './components/login/login.component';//100% DONE
-import {MedicinasComponent} from './components/medicinas/medicinas.component';
+import {MedicinasComponent} from './components/medicinas/medicinas.component';// 100% DONE
 import {MedicinasFormComponent} from './components/medicinas-form/medicinas-form.component';
 import {MedicinasFormEditComponent} from './components/medicinas-form-edit/medicinas-form-edit.component';
 import {MedicinasShowComponent} from './components/medicinas-show/medicinas-show.component';
