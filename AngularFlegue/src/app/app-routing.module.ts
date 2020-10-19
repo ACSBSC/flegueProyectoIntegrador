@@ -15,6 +15,7 @@ import {MedicinasFormComponent} from './components/medicinas-form/medicinas-form
 import {MedicinasFormEditComponent} from './components/medicinas-form-edit/medicinas-form-edit.component';
 import {MedicinasShowComponent} from './components/medicinas-show/medicinas-show.component';
 import {RegisterComponent} from './components/register/register.component';//100% DONE
+import {ResumenCuidadorComponent} from './components/resumen-cuidador/resumen-cuidador.component';
 import {ResumenUsuarioComponent} from './components/resumen-usuario/resumen-usuario.component';
 import {SelectUserComponent} from './components/select-user/select-user.component';
 import {SignosVitalesComponent} from './components/signos-vitales/signos-vitales.component';
@@ -40,6 +41,7 @@ const routes: Routes = [
   {path: 'medicinas-edit', component: MedicinasFormEditComponent},
   {path: 'medicinas-show', component: MedicinasShowComponent},
   {path: 'register', component: RegisterComponent},
+  {path: 'resumen-cuidador', component: ResumenCuidadorComponent},
   {path: 'resumen-usuario', component: ResumenUsuarioComponent},
   {path: 'select-user', component: SelectUserComponent},
   {path: 'signos-vitales', component: SignosVitalesComponent},

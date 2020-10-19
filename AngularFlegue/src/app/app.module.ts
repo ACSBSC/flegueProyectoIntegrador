@@ -28,6 +28,7 @@ import { SignosVitalesHistorialComponent } from './components/signos-vitales-his
 
 import { AngularFireModule } from '@angular/fire';
 import { environment } from '../environments/environment';
+import { ResumenCuidadorComponent } from './resumen-cuidador/resumen-cuidador.component';
 
 @NgModule({
   declarations: [
@@ -53,7 +54,8 @@ import { environment } from '../environments/environment';
     UserAddComponent,
     UserDeleteComponent,
     UserShowComponent,
-    SignosVitalesHistorialComponent
+    SignosVitalesHistorialComponent,
+    ResumenCuidadorComponent
   ],
   imports: [
     BrowserModule,
