@@ -3,8 +3,8 @@ import { Routes, RouterModule } from '@angular/router';
 
 import {AppointmentComponent} from './components/appointment/appointment.component';// 100% DONE
 import {AppointmentFormComponent} from './components/appointment-form/appointment-form.component';//100% DONE
-import {AppointmentFormEditComponent} from './components/appointment-form-edit/appointment-form-edit.component';//revisar vista
-import {AppointmentShowComponent} from './components/appointment-show/appointment-show.component';//revisar vista
+import {AppointmentFormEditComponent} from './components/appointment-form-edit/appointment-form-edit.component';//100% DONE
+import {AppointmentShowComponent} from './components/appointment-show/appointment-show.component';//100% DONE
 import {ChatBotComponent} from './components/chat-bot/chat-bot.component';//100% DONE
 import {EmergencyButtonComponent} from './components/emergency-button/emergency-button.component';//100% DONE
 import {EstadoDeAnimoComponent} from './components/estado-de-animo/estado-de-animo.component';// 100% DONE
