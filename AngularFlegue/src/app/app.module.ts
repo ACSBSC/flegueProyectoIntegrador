@@ -17,6 +17,7 @@ import { MedicinasFormComponent } from './components/medicinas-form/medicinas-fo
 import { MedicinasFormEditComponent } from './components/medicinas-form-edit/medicinas-form-edit.component';
 import { MedicinasShowComponent } from './components/medicinas-show/medicinas-show.component';
 import { RegisterComponent } from './components/register/register.component';
+import {ResumenCuidadorComponent} from './components/resumen-cuidador/resumen-cuidador.component';
 import { ResumenUsuarioComponent } from './components/resumen-usuario/resumen-usuario.component';
 import { SelectUserComponent } from './components/select-user/select-user.component';
 import { SignosVitalesComponent } from './components/signos-vitales/signos-vitales.component';
@@ -28,7 +29,6 @@ import { SignosVitalesHistorialComponent } from './components/signos-vitales-his
 
 import { AngularFireModule } from '@angular/fire';
 import { environment } from '../environments/environment';
-import { ResumenCuidadorComponent } from './resumen-cuidador/resumen-cuidador.component';
 
 @NgModule({
   declarations: [
@@ -47,6 +47,7 @@ import { ResumenCuidadorComponent } from './resumen-cuidador/resumen-cuidador.co
     MedicinasFormEditComponent,
     MedicinasShowComponent,
     RegisterComponent,
+    ResumenCuidadorComponent,
     ResumenUsuarioComponent,
     SelectUserComponent,
     SignosVitalesComponent,

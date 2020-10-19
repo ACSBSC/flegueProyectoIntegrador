@@ -22,7 +22,7 @@ import {SignosVitalesComponent} from './components/signos-vitales/signos-vitales
 import {SignosVitalesButtonComponent} from './components/signos-vitales-button/signos-vitales-button.component';
 import {SignosVitalesHistorialComponent} from './components/signos-vitales-historial/signos-vitales-historial.component';
 import {UserAddComponent} from './components/user-add/user-add.component';
-import {UserDeleteComponent} from './components/user-delete/user-delete.component';
+import {UserDeleteComponent} from './components/user-delete/user-delete.component';//90% DONE Footer missing
 import {UserShowComponent} from './components/user-show/user-show.component';
 
 
