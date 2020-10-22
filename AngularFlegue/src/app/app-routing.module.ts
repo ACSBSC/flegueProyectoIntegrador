@@ -27,6 +27,7 @@ import {UserShowComponent} from './components/user-show/user-show.component';
 
 
 const routes: Routes = [
+  {path: '', redirectTo: '/log-in', pathMatch: 'full'},
   {path: 'appointment', component: AppointmentComponent},
   {path: 'appointment-form', component: AppointmentFormComponent},
   {path: 'appointment-edit', component: AppointmentFormEditComponent},
