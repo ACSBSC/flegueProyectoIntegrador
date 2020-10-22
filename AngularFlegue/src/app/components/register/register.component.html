@@ -21,15 +21,15 @@
         </div>
         <div class="row">
             <h2 class="subtitle"><label for="subject">E-mail</label></h2>
-            <input type="email" id="email" name="email" placeholder="e-mail">
+            <input type="email" id="email" name="email" placeholder="e-mail" #email>
         </div>
         <div class="row">
             <h2 class="subtitle"><label for="subject">Contraseña</label></h2>
-            <input type="password" id="pwd" name="pwd" placeholder="Contraseña">
+            <input type="password" id="pwd" name="pwd" placeholder="Contraseña" #password>
         </div>
         <div class="row">
             <div class="place">
-                <button type="submit" [routerLink]="'/emergency-button'">Iniciar Sesión</button>
+                <button type="submit" [routerLink]="'/emergency-button'" (click)="onSignup(email.value, password.value)">Iniciar Sesión</button>
 
             </div>
         </div>

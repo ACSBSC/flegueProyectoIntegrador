@@ -29,6 +29,8 @@ import { SignosVitalesHistorialComponent } from './components/signos-vitales-his
 
 import { AngularFireModule } from '@angular/fire';
 import { environment } from '../environments/environment';
+import { FirebaseService } from './services/firebase/firebase.service';
+import { FirebaseAuthService } from "./services/firebase/firebase-auth.service";
 
 @NgModule({
   declarations: [
@@ -63,7 +65,7 @@ import { environment } from '../environments/environment';
     AppRoutingModule,
     AngularFireModule.initializeApp(environment.firebase)
   ],
-  providers: [],
+  providers: [FirebaseService, FirebaseAuthService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
