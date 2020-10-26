@@ -95,7 +95,7 @@ html {
 }
 
 #circulo-azul{
-  
+
     width: 30%;
     height: auto;
     background-color: #ffffff;
@@ -164,7 +164,7 @@ html {
 #img_footer{
     display: inline;
     max-width: 50px;
-
+    margin-right: 5%;
 }
 
 footer{
@@ -179,8 +179,8 @@ footer{
 
 .card-circle{
   display: flex;
-  justify-content: center; 
-  flex-direction: row; 
+  justify-content: center;
+  flex-direction: row;
 
 }
 
