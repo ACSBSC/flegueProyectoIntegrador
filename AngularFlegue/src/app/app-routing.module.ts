@@ -14,7 +14,7 @@ import {MedicinasComponent} from './components/medicinas/medicinas.component';
 import {MedicinasFormComponent} from './components/medicinas-form/medicinas-form.component';
 import {MedicinasFormEditComponent} from './components/medicinas-form-edit/medicinas-form-edit.component';
 import {MedicinasShowComponent} from './components/medicinas-show/medicinas-show.component';
-import {RegisterComponent} from './components/register/register.component';//chacar login
+import {RegisterComponent} from './components/register/register.component';//checar login
 import {ResumenCuidadorComponent} from './components/resumen-cuidador/resumen-cuidador.component';
 import {ResumenUsuarioComponent} from './components/resumen-usuario/resumen-usuario.component';
 import {SelectUserComponent} from './components/select-user/select-user.component';
