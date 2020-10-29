@@ -20,7 +20,7 @@ export class RegisterComponent implements OnInit {
   }
   async onSignup(email:string, password:string){
     await this.authService.signup(email, password)
-    /* if (this.authService.isLoggedIn)
-    this.isSignedIn = true */
+    if (this.authService.isLoggedIn)
+    this.isSignedIn = true
   }
 }

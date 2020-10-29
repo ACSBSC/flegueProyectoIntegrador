@@ -1,6 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
-import { FirebaseAuthService } from 'src/app/services/firebase/firebase-auth.service';
 
 @Component({
   selector: 'app-emergency-button',
@@ -9,15 +7,9 @@ import { FirebaseAuthService } from 'src/app/services/firebase/firebase-auth.ser
 })
 export class EmergencyButtonComponent implements OnInit {
 
-  constructor(public authService: FirebaseAuthService, private router: Router) { }
+  constructor() { }
 
   ngOnInit(): void {
   }
-
-  logout() {
-    this.authService.logout();
-    this.router.navigate(['inicio']);
-  }
-
 
 }
