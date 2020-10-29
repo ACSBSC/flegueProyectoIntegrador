@@ -32,6 +32,7 @@ import { environment } from '../environments/environment';
 import { FirebaseService } from './services/firebase/firebase.service';
 import { FirebaseAuthService } from "./services/firebase/firebase-auth.service";
 
+
 @NgModule({
   declarations: [
     AppComponent,

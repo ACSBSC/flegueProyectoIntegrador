@@ -27,13 +27,16 @@ import {UserShowComponent} from './components/user-show/user-show.component';
 
 
 const routes: Routes = [
-  {path: '', redirectTo: '/log-in', pathMatch: 'full'},
+  //{path: '', redirectTo: '/log-in', pathMatch: 'full'},
+
+  {path: '', component: EmergencyButtonComponent},
+  {path: 'login', component:LoginComponent},
   {path: 'appointment', component: AppointmentComponent},
   {path: 'appointment-form', component: AppointmentFormComponent},
   {path: 'appointment-edit', component: AppointmentFormEditComponent},
   {path: 'appointment-show', component: AppointmentShowComponent},
   {path: 'chatbot', component: ChatBotComponent},
-  {path: 'emergency-button', component: EmergencyButtonComponent},
+  //{path: 'emergency-button', component: EmergencyButtonComponent},
   {path: 'estado-animo', component: EstadoDeAnimoComponent},
   {path: 'inicio', component: InicioComponent},
   {path: 'log-in', component: LoginComponent},
