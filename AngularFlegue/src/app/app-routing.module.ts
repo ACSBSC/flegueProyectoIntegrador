@@ -25,38 +25,35 @@ import {UserAddComponent} from './components/user-add/user-add.component';
 import {UserDeleteComponent} from './components/user-delete/user-delete.component';
 import {UserShowComponent} from './components/user-show/user-show.component';
 
-import { AuthGuardGuard } from './auth-guard.guard';
-
-
 
 const routes: Routes = [
   //{path: '', redirectTo: '/log-in', pathMatch: 'full'},
 
-  {path: '', redirectTo: 'login', pathMatch: 'full'},
+  {path: '', component: EmergencyButtonComponent},
   {path: 'login', component:LoginComponent},
-  {path: 'appointment', component: AppointmentComponent, canActivate: [AuthGuardGuard]},
-  {path: 'appointment-form', component: AppointmentFormComponent, canActivate: [AuthGuardGuard]},
-  {path: 'appointment-edit', component: AppointmentFormEditComponent, canActivate: [AuthGuardGuard]},
-  {path: 'appointment-show', component: AppointmentShowComponent, canActivate: [AuthGuardGuard]},
-  {path: 'chatbot', component: ChatBotComponent, canActivate: [AuthGuardGuard]},
-  {path: 'emergency-button', component: EmergencyButtonComponent, canActivate: [AuthGuardGuard]},
-  {path: 'estado-animo', component: EstadoDeAnimoComponent, canActivate: [AuthGuardGuard]},
+  {path: 'appointment', component: AppointmentComponent},
+  {path: 'appointment-form', component: AppointmentFormComponent},
+  {path: 'appointment-edit', component: AppointmentFormEditComponent},
+  {path: 'appointment-show', component: AppointmentShowComponent},
+  {path: 'chatbot', component: ChatBotComponent},
+  //{path: 'emergency-button', component: EmergencyButtonComponent},
+  {path: 'estado-animo', component: EstadoDeAnimoComponent},
   {path: 'inicio', component: InicioComponent},
   {path: 'log-in', component: LoginComponent},
-  {path: 'medicinas', component: MedicinasComponent, canActivate: [AuthGuardGuard]},
-  {path: 'medicinas-form', component: MedicinasFormComponent, canActivate: [AuthGuardGuard]},
-  {path: 'medicinas-edit', component: MedicinasFormEditComponent, canActivate: [AuthGuardGuard]},
-  {path: 'medicinas-show', component: MedicinasShowComponent, canActivate: [AuthGuardGuard]},
+  {path: 'medicinas', component: MedicinasComponent},
+  {path: 'medicinas-form', component: MedicinasFormComponent},
+  {path: 'medicinas-edit', component: MedicinasFormEditComponent},
+  {path: 'medicinas-show', component: MedicinasShowComponent},
   {path: 'register', component: RegisterComponent},
-  {path: 'resumen-cuidador', component: ResumenCuidadorComponent, canActivate: [AuthGuardGuard]},
-  {path: 'resumen-usuario', component: ResumenUsuarioComponent, canActivate: [AuthGuardGuard]},
-  {path: 'select-user', component: SelectUserComponent, canActivate: [AuthGuardGuard]},
-  {path: 'signos-vitales', component: SignosVitalesComponent, canActivate: [AuthGuardGuard]},
-  {path: 'signos-vitales-button', component: SignosVitalesButtonComponent, canActivate: [AuthGuardGuard]},
-  {path: 'signos-vitales-historial', component: SignosVitalesHistorialComponent, canActivate: [AuthGuardGuard]},
-  {path: 'user-add', component: UserAddComponent, canActivate: [AuthGuardGuard]},
-  {path: 'user-delete', component: UserDeleteComponent, canActivate: [AuthGuardGuard]},
-  {path: 'user-show', component: UserShowComponent, canActivate: [AuthGuardGuard]},
+  {path: 'resumen-cuidador', component: ResumenCuidadorComponent},
+  {path: 'resumen-usuario', component: ResumenUsuarioComponent},
+  {path: 'select-user', component: SelectUserComponent},
+  {path: 'signos-vitales', component: SignosVitalesComponent},
+  {path: 'signos-vitales-button', component: SignosVitalesButtonComponent},
+  {path: 'signos-vitales-historial', component: SignosVitalesHistorialComponent},
+  {path: 'user-add', component: UserAddComponent},
+  {path: 'user-delete', component: UserDeleteComponent},
+  {path: 'user-show', component: UserShowComponent},
 ];
 
 @NgModule({

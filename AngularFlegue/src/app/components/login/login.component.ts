@@ -13,23 +13,17 @@ export class LoginComponent implements OnInit {
   constructor(public authService: FirebaseAuthService, private router:Router) { }
 
   ngOnInit(): void {
-    /* if (localStorage.getItem('user') !== null)
+    if (localStorage.getItem('user') !== null)
     this.isSignedIn = true
     else
-    this.isSignedIn = false */
+    this.isSignedIn = false
   }
-  onSignin(email:string, password:string){
+  async onSignin(email:string, password:string){
     /* await this.authService.signin(email, password);
     this.router.navigate(['']); */
-    /* console.log("email: " + email);
-    console.log("password: " + password); */
 
-    this.authService.signin(email, password).then(res => {
-      
-      
-      this.router.navigate(['emergency-button']);
-    }, err => {
-      console.log(err);
+    this.authService.signin(email, password).then((data) => {
+      this.router.navigate(['']);
     })
 
     /* if (this.authService.isLoggedIn)

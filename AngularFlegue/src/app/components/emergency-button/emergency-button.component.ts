@@ -14,10 +14,10 @@ export class EmergencyButtonComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  /* logout() {
+  logout() {
     this.authService.logout();
     this.router.navigate(['inicio']);
-  } */
+  }
 
 
 }
