@@ -15,26 +15,26 @@
         <div class="group">
           <img src="../../assets/images/mas.png" alt="mas" class="img_inicio">
 
-          <form>
+          <form  id="myForm">
               <div class="row">
                   <h2 class="subtitle"><label for="fname">Nombre del doctor</label></h2>
-                  <input type="text" id="fname" name="name" placeholder="Nombre del doctor" required>
+                  <input type="text" id="name" name="name" placeholder="Nombre del doctor" required>
               </div>
               <div class="row">
                   <h2 class="subtitle"><label for="subject">Especialidad</label></h2>
-                  <input type="text" id="fname" name="speciality" placeholder="Especialidad">
+                  <input type="text" id="speciality" name="speciality" placeholder="Especialidad">
               </div>
               <div class="row">
                   <h2 class="subtitle"><label for="subject">Lugar</label></h2>
-                  <input type="text" id="fname" name="place" placeholder="Lugar">
+                  <input type="text" id="place" name="place" placeholder="Lugar">
               </div>
               <div class="row">
                   <h2 class="subtitle"><label for="subject">Fecha y hora</label></h2>
-                  <input type="text" id="fname" name="date" placeholder="Fecha y hora">
+                  <input type="text" id="time" name="date" placeholder="Fecha y hora">
               </div>
               <div class="row">
                   <div class="place">
-                      <button type="submit" [routerLink]="'/appointment'">Agregar</button>
+                      <button type="submit" routerLink="/appointment">Agregar</button>
                   </div>
               </div>
 
@@ -43,5 +43,9 @@
         </div>
 
   </div>
+
 </body>
+
+
+
 <router-outlet></router-outlet>
