@@ -8,12 +8,22 @@ export class FirebaseAuthService {
   //isLoggedIn = false; 
 
   constructor(public firebaseAuth: AngularFireAuth) { }
-  async signin(email: string, password: string){
+
+  signin(email: string, password: string){
+    
+    
     /* await this.firebaseAuth.signInWithEmailAndPassword(email, password).then(res => {
       //this.isLoggedIn = true
       localStorage.setItem('user', JSON.stringify(res.user))
-    }) */
-    return this.firebaseAuth.signInWithEmailAndPassword(email, password);
+    }) 
+    return this.firebaseAuth.signInWithEmailAndPassword(email, password);*/
+
+    return new Promise<any>((resolve, reject) => {
+      this.firebaseAuth.signInWithEmailAndPassword(email, password)
+      .then(res => {
+        resolve(res);
+      }, err => reject(err))
+    })
   }
 
   async signup(email: string, password: string){
@@ -26,7 +36,16 @@ export class FirebaseAuthService {
   }
 
   logout(){
-    return this.firebaseAuth.signOut();
+    //return this.firebaseAuth.signOut();
     //localStorage.removeItem('user')
+    return new Promise((resolve, reject) => {
+      if(this.firebaseAuth.currentUser){
+        this.firebaseAuth.signOut();
+        resolve();
+      }
+      else{
+        reject();
+      }
+    });
   }
 }

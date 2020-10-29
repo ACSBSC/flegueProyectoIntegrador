@@ -1,11 +1,12 @@
-import { Component } from '@angular/core';
+import { Component, ViewEncapsulation  } from '@angular/core';
 import { Router } from '@angular/router';
 import { FirebaseAuthService } from 'src/app/services/firebase/firebase-auth.service';
 
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
-  styleUrls: ['./app.component.css']
+  styleUrls: ['./app.component.css'],
+  encapsulation: ViewEncapsulation.None
 })
 
 export class AppComponent {
@@ -15,7 +16,7 @@ export class AppComponent {
   private user_email: String;
   constructor(public authService: FirebaseAuthService, private router: Router) {
     //this.authService.firebaseAuth.onAuthStateChanged()
-    this.authService.firebaseAuth.onAuthStateChanged(
+    /* this.authService.firebaseAuth.authState.subscribe(
       (auth) => {
         if (auth == null) {
           console.log("Logged out");
@@ -32,6 +33,6 @@ export class AppComponent {
           this.router.navigate(['']);
         }
       }
-    );
+    ); */
   }
 }
