@@ -18,8 +18,9 @@ export class RegisterComponent implements OnInit {
     else
     this.isSignedIn = false
   }
-  async onSignup(email:string, password:string){
-    await this.authService.signup(email, password)
+  async onSignup(event: Event, email:string, password:string, phone: string, rol: string, nombre: string){
+    event.preventDefault();
+    await this.authService.signup(email, password, phone, rol, nombre)
     if (this.authService.isLoggedIn)
     this.isSignedIn = true
   }

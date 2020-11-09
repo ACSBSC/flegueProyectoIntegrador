@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { AngularFireAuth } from '@angular/fire/auth';
 import { Router } from '@angular/router';
+import { AngularFireDatabase } from '@angular/fire/database';
 
 @Injectable({
   providedIn: 'root'
@@ -8,7 +9,7 @@ import { Router } from '@angular/router';
 export class FirebaseAuthService {
   isLoggedIn = false; 
 
-  constructor(private firebaseAuth: AngularFireAuth, private router: Router ) { }
+  constructor(private firebaseAuth: AngularFireAuth, private router: Router, private db: AngularFireDatabase ) { }
   async signin(email: string, password: string){
     console.log("Holita login service");
     
@@ -27,11 +28,15 @@ export class FirebaseAuthService {
       });
   }
 
-  async signup(email: string, password: string){
+  async signup(email: string, password: string, phone: string, rol: string, nombre: string){
     await this.firebaseAuth.createUserWithEmailAndPassword(email, password).then(res => {
       this.isLoggedIn = true;
       localStorage.setItem('user', JSON.stringify(res.user));
-      //Create fb rtdb object
+      this.db.list('Usuarios').push({id: res.user.uid,
+                                  email: res.user.email,
+                                  name: nombre,
+                                  phone: phone,
+                                  rol: rol});
       this.router.navigate(['']);
     }).catch(function(error) {
       console.log('firebase sign in error ',email, error)
