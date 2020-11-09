@@ -24,19 +24,22 @@ import {SignosVitalesHistorialComponent} from './components/signos-vitales-histo
 import {UserAddComponent} from './components/user-add/user-add.component';
 import {UserDeleteComponent} from './components/user-delete/user-delete.component';
 import {UserShowComponent} from './components/user-show/user-show.component';
+import { AngularFireAuthGuard, redirectUnauthorizedTo, redirectLoggedInTo } from '@angular/fire/auth-guard';
+
+const redirectUnauthorizedToLogin = () => redirectUnauthorizedTo(['login']);
+const redirectToDashboard = redirectLoggedInTo(['']);
 
 
 const routes: Routes = [
-  {path: '', redirectTo: '/log-in', pathMatch: 'full'},
+  {path: 'login', component: LoginComponent},
   {path: 'appointment', component: AppointmentComponent},
   {path: 'appointment-form', component: AppointmentFormComponent},
   {path: 'appointment-edit', component: AppointmentFormEditComponent},
   {path: 'appointment-show', component: AppointmentShowComponent},
   {path: 'chatbot', component: ChatBotComponent},
-  {path: 'emergency-button', component: EmergencyButtonComponent},
+  {path: '', component: EmergencyButtonComponent, canActivate: [AngularFireAuthGuard], data:{ authGuardPipe: redirectUnauthorizedToLogin }},
   {path: 'estado-animo', component: EstadoDeAnimoComponent},
   {path: 'inicio', component: InicioComponent},
-  {path: 'log-in', component: LoginComponent},
   {path: 'medicinas', component: MedicinasComponent},
   {path: 'medicinas-form', component: MedicinasFormComponent},
   {path: 'medicinas-edit', component: MedicinasFormEditComponent},

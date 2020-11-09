@@ -5,16 +5,16 @@
         <img src="../../assets/images/vision.png" alt="lentes" class="img_inicio">
       <form>
           <div class="row">
-              <h2 class="subtitle"><label for="fname">E-mail o Teléfono</label></h2>
-              <input type="text" #email id="fname" name="autenticación" placeholder="E-mail o Teléfono" required>
+              <h2 class="subtitle"><label for="subject">E-mail o Teléfono</label></h2>
+              <input type="email" id="email" name="email" placeholder="e-mail" #email>
           </div>
           <div class="row">
               <h2 class="subtitle"><label for="subject">Contraseña</label></h2>
-              <input type="password" #password id="pwd" name="pwd" placeholder="Contraseña">
+              <input type="password" id="pwd" name="pwd" placeholder="Contraseña" #password>
           </div>
           <div class="row">
               <div class="place">
-                  <button type="submit" [routerLink]="'/emergency-button'" (click)="onSignin(email.value, password.value)">Iniciar Sesión</button>
+                  <button type="submit" (click)="onSignin(email.value, password.value)">Iniciar Sesión</button>
               </div>
           </div>
           <div class="row">
