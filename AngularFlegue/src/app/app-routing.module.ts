@@ -28,6 +28,8 @@ import { AngularFireAuthGuard, redirectUnauthorizedTo, redirectLoggedInTo } from
 
 const redirectUnauthorizedToLogin = () => redirectUnauthorizedTo(['login']);
 const redirectToDashboard = redirectLoggedInTo(['']);
+const redirectToCuidador = redirectLoggedInTo(['']);
+
 
 
 const routes: Routes = [
