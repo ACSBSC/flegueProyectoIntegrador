@@ -19,27 +19,41 @@
 
     <div class="info">
 
-      <form>
+      <form #medicineForm="ngForm" (ngSubmit)="addMedicine(medicineForm)">
 
           <h2 class="subtitle"><label for="fname">Nombre del medicamento</label></h2>
-          <input class="input-text" type="text" id="fname" name="name" placeholder="Nombre del doctor" required>
+          <input
+            class="input-text"
+            type="text" id="fname"
+            name="name"
+            placeholder="Nombre medicamento"
+            required
+            [(ngModel)]="medicinesService.selectedMedicine.name">
           <br/>
 
           <h2 class="subtitle"><label for="subject">Función</label></h2>
-          <input class="input-text"  type="text" id="fname" name="function" placeholder="Especialidad">
-
+          <input
+            class="input-text"
+            type="text"
+            id="fname"
+            name="function"
+            placeholder="Función"
+            required
+            [(ngModel)]="medicinesService.selectedMedicine.function">
           <br/>
 
-          <h2 class="subtitle"><label for="subject">Dosis</label></h2>
-          <input class="input-text"  type="text" id="fname" name="dosis" placeholder="Lugar">
-
+          <h2 class="subtitle"><label for="subject">Horario</label></h2>
+          <input
+            class="input-text"
+            type="text"
+            id="fname"
+            name="time"
+            placeholder="Horario"
+            required
+            [(ngModel)]="medicinesService.selectedMedicine.time">
           <br/>
 
-          <h2 class="subtitle"><label for="subject">Comentarios adicionales</label></h2>
-          <input class="input-text"  type="text" id="fname" name="comments" placeholder="Fecha y hora">
-          <br/>
-
-          <input type="submit" value="Agregar" class="red-button" routerLink="/medicinas">
+          <input type="submit" value="Agregar" class="red-button" >
 
       </form>
   </div>

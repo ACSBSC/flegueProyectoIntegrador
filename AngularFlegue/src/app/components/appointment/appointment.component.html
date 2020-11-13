@@ -12,7 +12,8 @@
 		<div class = "info">
 			<a routerLink="/appointment-form"><div class="red-button">
 				<span>Agregar cita</span>
-			</div></a>
+      </div></a>
+      <!--
 			<a routerLink="/appointment-show">
 			<div class="doc-card">
 				<div class="doc-img"></div>
@@ -21,7 +22,19 @@
 				<span class="doc-specialty">Especialidad</span><br>
 				<span class="doc-location">Hospital Angeles Lindavista</span><br>
 				<span class="doc-date">Lunes 16 de septiembre </span>
-			</div></a>
+      </div></a>
+      -->
+      <div *ngFor="let appointment of appointmentsService.appointments">
+        <a routerLink="/appointment-show/{{appointment.id}}">
+          <div class="doc-card">
+            <div class="doc-img"></div>
+            <span class="doc-name">{{appointment.doctor}}</span><br>
+            <span class="doc-time">{{appointment.day}}</span><br>
+            <span class="doc-specialty">{{appointment.name}}</span><br>
+            <span class="doc-location">{{appointment.location}}</span><br>
+          </div>
+        </a>
+      </div>
 
 
 

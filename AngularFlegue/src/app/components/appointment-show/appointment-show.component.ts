@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
+import { AppointmentsService } from '../../services/appointments/appointments.service'
 
 @Component({
   selector: 'app-appointment-show',
@@ -6,10 +8,37 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./appointment-show.component.css']
 })
 export class AppointmentShowComponent implements OnInit {
+  appointment;
+  error;
 
-  constructor() { }
+  constructor(
+    public route: ActivatedRoute,
+    public appointmentsService: AppointmentsService
+  ) { }
 
   ngOnInit(): void {
+    this.loadAppointment();
+  }
+
+  loadAppointment() {
+    const appointmentId = this.route.snapshot.paramMap.get('id');
+    this.appointmentsService.getAppointmentById(appointmentId).subscribe(
+      data => this.appointment = data,
+      error => this.error = error
+    )
+
+  }
+
+  deleteAppointment(id: string) {
+
+    if (confirm('¿Seguro que quieres borrar esta cita?')) {
+      console.log('id', id)
+      this.appointmentsService.deleteAppointment(id)
+        .subscribe(
+          (res) => console.log(res),
+          (err) => console.log(err)
+        )
+    }
   }
 
 }

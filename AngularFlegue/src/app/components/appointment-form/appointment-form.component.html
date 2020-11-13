@@ -15,26 +15,52 @@
         <div class="group">
           <img src="../../assets/images/mas.png" alt="mas" class="img_inicio">
 
-          <form  id="myForm">
+          <form  id="myForm" #appointmentForm="ngForm" (ngSubmit)="addAppointment(appointmentForm)">
+            <div class="row">
+              <h2 class="subtitle"><label for="subject">Especialidad</label></h2>
+              <input
+                type="text"
+                id="speciality"
+                name="name"
+                placeholder="Especialidad"
+                required
+                [(ngModel)]="appointmentsService.selectedAppointment.name">
+
+            </div>
               <div class="row">
-                  <h2 class="subtitle"><label for="fname">Nombre del doctor</label></h2>
-                  <input type="text" id="name" name="name" placeholder="Nombre del doctor" required>
-              </div>
+                <h2 class="subtitle"><label for="subject">Fecha y hora</label></h2>
+                <input
+                  type="text"
+                  id="time"
+                  name="day"
+                  placeholder="Fecha y hora"
+                  required
+                  [(ngModel)]="appointmentsService.selectedAppointment.day">
+
+            </div>
+            <div class="row">
+              <h2 class="subtitle"><label for="subject">Lugar</label></h2>
+              <input
+                type="text"
+                id="place"
+                name="location"
+                placeholder="Lugar"
+                required
+                [(ngModel)]="appointmentsService.selectedAppointment.location">
+            </div>
               <div class="row">
-                  <h2 class="subtitle"><label for="subject">Especialidad</label></h2>
-                  <input type="text" id="speciality" name="speciality" placeholder="Especialidad">
-              </div>
-              <div class="row">
-                  <h2 class="subtitle"><label for="subject">Lugar</label></h2>
-                  <input type="text" id="place" name="place" placeholder="Lugar">
-              </div>
-              <div class="row">
-                  <h2 class="subtitle"><label for="subject">Fecha y hora</label></h2>
-                  <input type="text" id="time" name="date" placeholder="Fecha y hora">
+                <h2 class="subtitle"><label for="fname">Nombre del doctor</label></h2>
+                <input
+                  type="text"
+                  id="name"
+                  name="doctor"
+                  placeholder="Nombre del doctor"
+                  required
+                  [(ngModel)]="appointmentsService.selectedAppointment.doctor">
               </div>
               <div class="row">
                   <div class="place">
-                      <button type="submit" routerLink="/appointment">Agregar</button>
+                      <button type="submit" >Agregar</button>
                   </div>
               </div>
 

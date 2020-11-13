@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { MedicinesService } from '../../services/medicines/medicines.service'
 
 @Component({
   selector: 'app-medicinas',
@@ -7,9 +8,28 @@ import { Component, OnInit } from '@angular/core';
 })
 export class MedicinasComponent implements OnInit {
 
-  constructor() { }
+
+  constructor(public medicinesService: MedicinesService) { }
 
   ngOnInit(): void {
+    this.getMedicines();
+  }
+
+  getMedicines() {
+    this.medicinesService.getMedicines().subscribe(
+      res => {
+        let array = [];
+        for (let key in res) {
+          if(res.hasOwnProperty(key)) {
+            array.push(res[key]);
+          }
+        }
+        this.medicinesService.medicines = array;
+
+      },
+      err => console.error(err)
+    )
+
   }
 
 }

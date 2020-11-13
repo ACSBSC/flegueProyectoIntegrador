@@ -21,23 +21,21 @@
 
       <form>
 
-          <h2 class="subtitle"><label for="fname">Nombre del medicamento</label></h2>
-          <input class="input-text" type="text" id="fname" name="name" placeholder="Nombre del doctor" required>
+          <h2 class="subtitle"><label for="fname">Nombre</label></h2>
+          <input class="input-text" type="text" id="fname" name="name" placeholder="{{medicine.name}}" required>
           <br/>
 
           <h2 class="subtitle"><label for="subject">Función</label></h2>
-          <input class="input-text"  type="text" id="fname" name="function" placeholder="Especialidad">
+          <input class="input-text"  type="text" id="fname" name="function" placeholder="{{medicine.function}}">
 
           <br/>
 
           <h2 class="subtitle"><label for="subject">Dosis</label></h2>
-          <input class="input-text"  type="text" id="fname" name="dosis" placeholder="Lugar">
+          <input class="input-text"  type="text" id="fname" name="dosis" placeholder="{{medicine.time}}">
 
           <br/>
 
-          <h2 class="subtitle"><label for="subject">Comentarios adicionales</label></h2>
-          <input class="input-text"  type="text" id="fname" name="comments" placeholder="Fecha y hora">
-          <br/>
+
 
           <input type="submit" value="Editar" class="red-button" ruterLink="/medicinas">
 

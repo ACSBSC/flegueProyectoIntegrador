@@ -16,13 +16,25 @@
 				<span>Agregar Medicamento</span>
       </div></a>
 
-			<a routerLink="/medicinas-show">
+      <!--
+      <a routerLink="/medicinas-show">
 			<div class="doc-card">
 				<span class="doc-name">Nombre del Medicamento</span><br>
 				<span class="doc-time">8:30 pm</span><br>
 				<span class="doc-specialty">Cada 24 horas</span><br>
 				<span class="doc-location">Función del medicamento</span><br>
       </div></a>
+      -->
+      <div *ngFor="let medicine of medicinesService.medicines">
+        <a routerLink="/medicinas-show/{{medicine.id}}">
+          <div class="doc-card">
+            <span class="doc-name">{{medicine.name}}</span><br>
+            <span class="doc-time">{{medicine.time}}</span><br>
+            <span class="doc-location">{{medicine.function}}</span><br>
+          </div>
+        </a>
+      </div>
+
 
     </div>
 

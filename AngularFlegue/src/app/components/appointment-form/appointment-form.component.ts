@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-
+import { AppointmentsService } from '../../services/appointments/appointments.service';
+import { NgForm } from '@angular/forms';
+import { Appointment } from 'src/app/models/appointment';
 
 
 @Component({
@@ -10,11 +12,21 @@ import { Component, OnInit } from '@angular/core';
 export class AppointmentFormComponent implements OnInit {
 
 
-  constructor() {
+  constructor(public appointmentsService: AppointmentsService) {
   }
 
   ngOnInit(){
 
     }
+
+  addAppointment(form: NgForm){
+    console.log(form.value);
+    this.appointmentsService.createAppointment(form.value).subscribe(
+      res => console.log(res),
+      err => console.error(err)
+    )
+  }
+
+
 
 }

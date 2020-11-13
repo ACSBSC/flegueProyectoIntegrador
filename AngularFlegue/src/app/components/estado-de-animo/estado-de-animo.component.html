@@ -7,38 +7,61 @@
         <h1>Estado de ánimo</h1>
         <div class="circle"><img src="../../assets/images/felicidad.png" alt="salud" id="img_icon"></div>
     </div>
-    <div class="info">
-      <div id="signos_vitales" class="card">
-          <div id="section">
-              <p id="measure">Hoy me siento feliz</p>
-              <div class="" id="state">
-                  <img src="../../assets/images/sonreir.png" alt="salud" id="img_icon">
+      <div class="info">
+        <form #feelingForm="ngForm" (ngSubmit)="addFeeling(feelingForm)">
+          <div id="signos_vitales" class="card">
+              <div id="section">
+                <input
+                  type="radio"
+                  id="feliz"
+                  name="feeling"
+                  value="feliz"
+                  [(ngModel)]="feelingsService.selectedFeeling.feeling">
+                  <p id="measure">Hoy me siento feliz</p>
+                  <div class="" id="state">
+                      <img src="../../assets/images/sonreir.png" alt="salud" id="img_icon">
+                  </div>
               </div>
           </div>
-      </div>
-      <div id="signos_vitales" class="card">
-          <div id="section">
-              <p id="measure">Hoy me siento triste</p>
-              <div class="" id="state">
-                  <img src="../../assets/images/triste.png" alt="salud" id="img_icon">
-              </div>
-          </div>
-      </div>
-      <div id="signos_vitales" class="card">
-          <div id="section">
-              <p id="measure">Hoy me siento irritado</p>
-              <div class="" id="state">
-                  <img src="../../assets/images/grave.png" alt="salud" id="img_icon">
-              </div>
-          </div>
-      </div>
+          <div id="signos_vitales" class="card">
+              <div id="section">
+                  <input
+                    type="radio"
+                    id="feliz"
+                    name="feeling"
+                    value="triste"
+                    [(ngModel)]="feelingsService.selectedFeeling.feeling">
 
-      <div class="row">
-          <div class="place">
-              <input type="submit" value="Registrar">
+
+                  <p id="measure">Hoy me siento triste</p>
+                  <div class="" id="state">
+                      <img src="../../assets/images/triste.png" alt="salud" id="img_icon">
+                  </div>
+              </div>
           </div>
+          <div id="signos_vitales" class="card">
+              <div id="section">
+                <input
+                  type="radio"
+                  id="feliz"
+                  name="feeling"
+                  value="irritado"
+                  [(ngModel)]="feelingsService.selectedFeeling.feeling">
+
+                  <p id="measure">Hoy me siento irritado</p>
+                  <div class="" id="state">
+                      <img src="../../assets/images/grave.png" alt="salud" id="img_icon">
+                  </div>
+              </div>
+          </div>
+
+          <div class="row">
+            <div class="place">
+                <input type="submit" value="Registrar">
+            </div>
+          </div>
+        </form>
       </div>
-    </div>
   </div>
 
   <footer>
