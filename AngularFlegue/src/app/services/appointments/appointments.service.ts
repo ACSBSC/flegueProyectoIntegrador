@@ -13,6 +13,8 @@ export class AppointmentsService {
   URL_API_POST = 'http://localhost:3000/api/post/cita/';
   URL_API_GET_ID = 'http://localhost:3000/api/get/cita/cita';
   URL_API_DELETE = 'http://localhost:3000/api/delete/cita/cita';
+  URL_API_PUT = 'http://localhost:3000/api/update/cita';
+  URL_API_PUT_STATUS = 'http://localhost:3000/api/update/cita/status';
 
   selectedAppointment: Appointment = {
     doctor: '',
@@ -43,6 +45,17 @@ export class AppointmentsService {
   deleteAppointment(id: string) {
     console.log('id service', id);
     return this.http.delete(`${this.URL_API_DELETE}/${id}`);
+  }
+
+  updateAppointment(id: string, appointment: Appointment) {
+    return this.http.put(`${this.URL_API_PUT}/${id}`, appointment);
+  }
+
+  updateAppointmentStatus(id: string, status: string) {
+    let obj  = '{"status": "' + status + '"}';
+    let response = JSON.parse(obj);
+    return this.http.put(`${this.URL_API_PUT_STATUS}/${id}`, response);
+
   }
 
 }

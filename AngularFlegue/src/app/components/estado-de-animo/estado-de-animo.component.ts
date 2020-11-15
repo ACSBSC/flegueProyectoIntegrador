@@ -18,7 +18,10 @@ export class EstadoDeAnimoComponent implements OnInit {
   addFeeling(form: NgForm) {
     console.log(form.value);
     this.feelingsService.createFeeling(form.value).subscribe(
-      res => console.log(res),
+      res => {
+        console.log(res),
+        window.location.href = `/resumen-usuario/`
+      },
       err => console.error(err)
     )
   }

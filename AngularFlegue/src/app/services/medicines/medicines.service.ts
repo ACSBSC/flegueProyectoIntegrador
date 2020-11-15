@@ -12,7 +12,9 @@ export class MedicinesService {
   URL_API_POST = 'http://localhost:3000/api/post/meds/';
   URL_API_GET_ID = 'http://localhost:3000/api/get/meds/cita';
   URL_API_DELETE = 'http://localhost:3000/api/delete/meds/cita';
-  URL_API_PUT = 'http://localhost:3000/api/update/meds/';
+  URL_API_PUT = 'http://localhost:3000/api/update/meds';
+  URL_API_PUT_STATUS = 'http://localhost:3000/api/update/meds/status';
+
 
   selectedMedicine: Medicine = {
     name: '',
@@ -26,6 +28,7 @@ export class MedicinesService {
 
   getMedicines() {
     // petición a la API
+    console.log('service')
     return this.http.get<Medicine[]>(this.URL_API_GET_ALL);
 
   }
@@ -44,7 +47,16 @@ export class MedicinesService {
     return this.http.delete(`${this.URL_API_DELETE}/${id}`);
   }
 
-  updateMedicine(id: string) {
+  updateMedicine(id: string, medicine: Medicine) {
+    return this.http.put(`${this.URL_API_PUT}/${id}`, medicine);
+
+  }
+
+  updateMedicineStatus(id: string, status: string) {
+    let obj  = '{"status": "' + status + '"}';
+    let response = JSON.parse(obj);
+    return this.http.put(`${this.URL_API_PUT_STATUS}/${id}`, response);
+
 
   }
 

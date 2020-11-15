@@ -16,22 +16,48 @@
       <div class="group">
         <img src="../../assets/images/lapiz.png" alt="mas" class="img_inicio">
 
-        <form>
+        <form #appointmentEditForm="ngForm" (ngSubmit)="editAppointment(appointmentEditForm)">
             <div class="row">
                 <h2 class="subtitle"><label for="fname">Nombre del doctor</label></h2>
-                <input type="text" id="fname" name="name" placeholder="{{appointment.name}}" required>
+                <input
+                  type="text"
+                  id="fname"
+                  name="name"
+                  placeholder="{{appointment.name}}"
+                  required
+                  [(ngModel)]="appointmentsService.selectedAppointment.name">
             </div>
             <div class="row">
                 <h2 class="subtitle"><label for="subject">Especialidad</label></h2>
-                <input type="text" id="fname" name="especiality" placeholder="{{appointment.doctor}}">
+                <input
+                  type="text"
+                  id="fname"
+                  name="doctor"
+                  placeholder="{{appointment.doctor}}"
+                  required
+                  [(ngModel)]="appointmentsService.selectedAppointment.doctor">
             </div>
             <div class="row">
                 <h2 class="subtitle"><label for="subject">Lugar</label></h2>
-                <input type="text" id="fname" name="place" placeholder="{{appointment.location}}">
+                <input
+                  type="text"
+                  id="fname"
+                  name="location"
+                  placeholder="{{appointment.location}}"
+                  required
+                  [(ngModel)]="appointmentsService.selectedAppointment.location"
+                  >
             </div>
             <div class="row">
                 <h2 class="subtitle"><label for="subject">Fecha y hora</label></h2>
-                <input type="text" id="fname" name="date" placeholder="{{appointment.day}}">
+                <input
+                  type="text"
+                  id="fname"
+                  name="day"
+                  placeholder="{{appointment.day}}"
+                  required
+                  [(ngModel)]="appointmentsService.selectedAppointment.day"
+                  >
             </div>
             <div class="row">
                 <div class="place">

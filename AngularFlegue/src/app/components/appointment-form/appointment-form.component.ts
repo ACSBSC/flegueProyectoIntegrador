@@ -17,12 +17,15 @@ export class AppointmentFormComponent implements OnInit {
 
   ngOnInit(){
 
-    }
+  }
 
   addAppointment(form: NgForm){
     console.log(form.value);
     this.appointmentsService.createAppointment(form.value).subscribe(
-      res => console.log(res),
+      res => {
+        console.log(res),
+        window.location.href = `/appointment`
+      },
       err => console.error(err)
     )
   }

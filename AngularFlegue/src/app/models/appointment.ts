@@ -5,4 +5,5 @@ export interface Appointment {
   location: string
   doctor: string
   user?: string
+  status?: string
 }

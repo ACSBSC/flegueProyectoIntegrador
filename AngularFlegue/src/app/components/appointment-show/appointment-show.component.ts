@@ -41,4 +41,25 @@ export class AppointmentShowComponent implements OnInit {
     }
   }
 
+  appointmentCompleted(id: string) {
+    console.log(id, "completed");
+    let newStatus = "completed";
+    this.appointmentsService.updateAppointmentStatus(id, newStatus)
+    .subscribe(
+      (res) => console.log(res),
+      (err) => console.log(err)
+    )
+  }
+
+  
+  appointmentMissing(id: string) {
+    console.log(id, "missing");
+    let newStatus = "missing";
+    this.appointmentsService.updateAppointmentStatus(id, newStatus)
+    .subscribe(
+      (res) => console.log(res),
+      (err) => console.log(err)
+    )
+  }
+
 }

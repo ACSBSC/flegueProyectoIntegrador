@@ -46,47 +46,56 @@
 
       <h1 class="card_title">Citas</h1>
 
-      <div id="citas" class="card">
-        <div id="section" style="height: 15%; ">
-            <div class="circle" style="margin-left:15px; margin-top: 15px; float:left;">
-                <img src="../../../assets/images/perfildoc.jpg" alt="doc" style="border-radius: 50%; width:100%;">
-            </div>
-            <div class="right">
-                <h4>Dr. Fernando López</h4>
-                <p> Especialidad </p>
-                <p>Hospital Ángeles</p>
-                <p style="color: #7291FF;"> Lunes 16 de septiembre </p>
-                <p style="color: #7291FF;">6:30pm</p>
+      <div *ngFor="let appointment of appointmentsService.appointments">
+        <div id="citas" class="card">
+          <div id="section" style="height: 15%; ">
+              <div class="circle" style="margin-left:15px; margin-top: 15px; float:left;">
+                  <img src="../../../assets/images/perfildoc.jpg" alt="doc" style="border-radius: 50%; width:100%;">
+              </div>
+              <div class="right">
+                <h4>{{appointment.name}}</h4>
+                <p> {{appointment.doctor}} </p>
+                <p>{{appointment.location}}</p>
+                <p style="color: #7291FF;"> {{appointment.day}} </p>
 
-            </div>
+              </div>
+          </div>
+
         </div>
 
       </div>
+
 
     <h1 class="card_title">Medicamentos</h1>
 
-    <div id="medicamentos" class="card" style="height:40px;">
-      <div id="section" style=" margin-left:-30px;">
-          <h4 class="left" >8:30pm</h4>
-          <div class="right">
-              <p style="color: #33B6FF; ">Nombre del Medicamento</p>
-              <p>Función del Medicamento</p>
-          </div>
+    <div *ngFor="let medicine of medicinesService.medicines">
+      <div id="medicamentos" class="card" style="height:40px;">
+        <div id="section" style=" margin-left:-30px;">
+            <h4 class="left" >{{medicine.time}}</h4>
+            <div class="right">
+                <p style="color: #33B6FF; ">{{medicine.name}}</p>
+                <p>{{medicine.function}}</p>
+            </div>
+        </div>
       </div>
-  </div>
+
+    </div>
+
 
   <h1 class="card_title">Estado de Ánimo</h1>
 
-  <div id="estado_animo" class="card" style="margin-bottom:170px;">
-    <div id="section" style="height: 15%;">
-        <div class="circle" style="margin-left:30px; float:left;">
-            <img src="../../../assets/images/smile.jpg" alt="doc" style="border-radius: 50%; width:100%;">
-        </div>
-        <div class="right" style="margin-top: 8%;">
-            <h4>Hoy me siento feliz</h4>
-        </div>
+  <div *ngFor="let feeling of feelingsService.feelings">
+    <div id="estado_animo" class="card" style="margin-bottom:30px;">
+      <div id="section" style="height: 15%;">
+          <div class="circle" style="margin-left:30px; float:left;">
+              <img src="../../../assets/images/smile.jpg" alt="doc" style="border-radius: 50%; width:100%;">
+          </div>
+          <div class="right" style="margin-top: 8%;">
+              <h4>Hoy me siento {{feeling.feeling}}</h4>
+          </div>
+      </div>
     </div>
-</div>
+  </div>
 
 
 

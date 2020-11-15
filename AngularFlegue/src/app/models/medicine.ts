@@ -4,4 +4,5 @@ export interface Medicine {
   function: string
   time: string
   user?: string
+  status?: string
 }

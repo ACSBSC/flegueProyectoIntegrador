@@ -19,25 +19,46 @@
 
     <div class="info">
 
-      <form>
+      <form #medicineEditForm="ngForm" (ngSubmit)="editMedicine(medicineEditForm)">
 
           <h2 class="subtitle"><label for="fname">Nombre</label></h2>
-          <input class="input-text" type="text" id="fname" name="name" placeholder="{{medicine.name}}" required>
+          <input
+            class="input-text"
+            type="text"
+            id="fname"
+            name="name"
+            placeholder="{{medicine.name}}"
+            required
+            [(ngModel)]="medicinesService.selectedMedicine.name">
           <br/>
 
           <h2 class="subtitle"><label for="subject">Función</label></h2>
-          <input class="input-text"  type="text" id="fname" name="function" placeholder="{{medicine.function}}">
+          <input
+            class="input-text"
+            type="text"
+            id="fname"
+            name="function"
+            placeholder="{{medicine.function}}"
+            [(ngModel)]="medicinesService.selectedMedicine.function"
+            >
 
           <br/>
 
           <h2 class="subtitle"><label for="subject">Dosis</label></h2>
-          <input class="input-text"  type="text" id="fname" name="dosis" placeholder="{{medicine.time}}">
+          <input
+            class="input-text"
+            type="text"
+            id="fname"
+            name="time"
+            placeholder="{{medicine.time}}"
+            [(ngModel)]="medicinesService.selectedMedicine.time"
+            >
 
           <br/>
 
 
 
-          <input type="submit" value="Editar" class="red-button" ruterLink="/medicinas">
+          <input type="submit" value="Editar" class="red-button">
 
       </form>
   </div>

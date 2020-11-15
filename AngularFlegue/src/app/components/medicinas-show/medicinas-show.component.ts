@@ -39,4 +39,22 @@ export class MedicinasShowComponent implements OnInit {
     }
   }
 
+  medicineCompleted(id: string) {
+    let newStatus = "completed";
+    this.medicinesService.updateMedicineStatus(id, newStatus)
+    .subscribe(
+      (res) => console.log(res),
+      (err) => console.log(err)
+    )
+  }
+
+  medicineMissing(id: string) {
+    let newStatus = "missing";
+    this.medicinesService.updateMedicineStatus(id, newStatus)
+    .subscribe(
+      (res) => console.log(res),
+      (err) => console.log(err)
+    )
+  }
+
 }

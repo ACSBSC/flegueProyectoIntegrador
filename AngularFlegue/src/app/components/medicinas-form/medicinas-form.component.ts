@@ -18,7 +18,10 @@ export class MedicinasFormComponent implements OnInit {
   addMedicine(form: NgForm) {
     console.log(form.value);
     this.medicinesService.createMedicine(form.value).subscribe(
-      res => console.log(res),
+      res => {
+        console.log(res),
+        window.location.href = '/medicinas'
+      },
       err => console.error(err)
     )
   }

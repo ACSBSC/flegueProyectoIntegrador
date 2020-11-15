@@ -1,6 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
+import { NgForm } from '@angular/forms';
+
 import { MedicinesService } from '../../services/medicines/medicines.service'
+import { Medicine } from '../../models/medicine';
 
 @Component({
   selector: 'app-medicinas-form-edit',
@@ -28,7 +31,17 @@ export class MedicinasFormEditComponent implements OnInit {
     )
   }
 
-  editMedicine() {
+  editMedicine(form: NgForm) {
+    console.log(form.value);
+    const medicineId = this.route.snapshot.paramMap.get('id');
+    console.log(medicineId);
+    this.medicinesService.updateMedicine(medicineId, form.value).subscribe(
+      res => {
+        console.log(res),
+        window.location.href = `/medicinas-show/${medicineId}`
+      },
+      err => console.error(err)
+    )
 
   }
 

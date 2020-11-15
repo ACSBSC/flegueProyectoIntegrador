@@ -33,22 +33,29 @@
 						<h5 style="font-weight: normal;">{{medicine.function}}</h5>
 					</div>
         </div>
+        <div>
 
-				<div id="box2">
-					<div id="boxIcon" style="margin-right: 60px; margin-top: 20px;">
-						<button style="border: none; background-color: transparent; display: block; margin-right: 50px; margin: auto;">
-							<img src="../../../assets/images/check.svg" alt="">
-						</button>
-						<h5 style="font-weight: normal;">Tome</h5>
-					</div>
+          <div id="box2">
+            <div id="boxIcon" style="margin-right: 60px; margin-top: 20px;">
+              <button style="border: none; background-color: transparent; display: block; margin-right: 50px; margin: auto;"
+              (click)="medicineCompleted(medicine.id)">
+                <img src="../../../assets/images/check.svg" alt="">
+              </button>
+              <h5 style="font-weight: normal;">Tome</h5>
+            </div>
 
-					<div id="boxIcon">
-						<button style="border: none; background-color: transparent; display: block; margin: auto; margin-top: 20px;">
-							<img src="../../../assets/images/cross.svg" alt="">
-						</button>
-						<h5 style="font-weight: normal;">No tome</h5>
-					</div>
-        </div>
+            <div id="boxIcon">
+              <button style="border: none; background-color: transparent; display: block; margin: auto; margin-top: 20px;">
+                <img src="../../../assets/images/cross.svg" alt=""
+                (click)="medicineMissing(medicine.id)">
+              </button>
+              <h5 style="font-weight: normal;">No tome</h5>
+            </div>
+          </div>
+
+
+      </div>
+
 
 			</div>
 
