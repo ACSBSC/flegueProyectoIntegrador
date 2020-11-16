@@ -32,11 +32,18 @@ export class FirebaseAuthService {
     await this.firebaseAuth.createUserWithEmailAndPassword(email, password).then(res => {
       this.isLoggedIn = true;
       localStorage.setItem('user', JSON.stringify(res.user));
-      this.db.list('Usuarios').push({id: res.user.uid,
+
+      
+      this.db.object('Usuarios/'+res.user.uid).set({id: res.user.uid,
+        email: res.user.email,
+        name: nombre,
+        phone: phone,
+        rol: rol});
+      /* this.db.list('Usuarios').push({id: res.user.uid,
                                   email: res.user.email,
                                   name: nombre,
                                   phone: phone,
-                                  rol: rol});
+                                  rol: rol}); */
       this.router.navigate(['']);
     }).catch(function(error) {
       console.log('firebase sign in error ',email, error)
