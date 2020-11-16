@@ -1,267 +1,144 @@
-body{
-    background: rgb(121,151,255);
-    padding: 0;
-    text-decoration:none;
-    overflow-x: hidden;
-    height: 100%;
-    min-height:100%;
-    margin-top: 0!important;
-    margin-bottom: 0!important;
-    margin-left: 0!important;
-    margin-right: 0!important;
+
+h2{
+  font-size: 15px;
+}
+.title{
+  text-align: center;
+  font-size: 30px;
+  margin-top: 0px;
 }
 
-section {
-    background: rgb(121,151,255);
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-    overflow-x: hidden;
-    overflow-y: hidden;
-    margin-top:20%;
-    margin-bottom:20%;
-    padding-bottom:10%;
-    
-    
+.logo {
+  text-align: center;
+  font-size: 30px;
+
 }
 
-section div h2 {
+.subtitle{
+  text-align: center;
+  color: #0b6ae6;
+  font-size: 20px;
+}
+.place{
+  text-align: center;
+  margin-top: 25px;
+  margin-left: 15%;
+}
+.cuenta{
+  font-size: 25px;
+  color: #9E9292;
+}
+.img_inicio{
+  width: 20%;
+  z-index: 3;
+}
+
+.over {
+  position: absolute;
+  z-index: 2;
+
+  color:white;
+  width: 100%;
+  top: 15px;
+  left: 0px;
+
+}
+
+#ellipse_blue{
+  position: absolute;
+  width: 100%;
+  height: 30%;
+  left: 0%;
+  top: -10%;
+
+  background: linear-gradient(180deg, #33B6FF 0%, rgba(255, 255, 255, 0) 100%), #7291FF;
+  border-bottom-right-radius: 80% 50%;
+  border-bottom-left-radius: 80% 50%;
+
+  font-size: 35px;
+  color:white;
+}
+
+
+
+input[type=text],input[type=tel],input[type=email],input[type=password], select{
+  width: 80%;
+  height: 9%;
+  padding: 20px;
+  resize: vertical;
+  font-size: 18px;
+  background: #FFFFFF;
+  border: 1px solid #33B6FF;
+  box-sizing: border-box;
+  border-radius: 30px;
+  margin:0;
+}
+
+  /* Style the label to display next to the inputs */
+  label {
+    padding: 12px 12px 12px 0;
+    display: inline-block;
+  }
+
+  /* Style the submit button */
+  button[type=submit] {
+    width: 80%;
+    height: 5%;
+    background-color: #FF748F;
     color: white;
-    font-family: Roboto;
-font-style: normal;
-font-weight: bold;
-font-size: 40px;
-line-height: 47px;
-}
-
-img {
-
-    width: 15rem;
-    height: auto;
-    margin: 3rem;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    left:50px;
-
-}
-
-
-
-p {
-    color: white;
-    font-family: Roboto;
-font-style: normal;
-font-weight: normal;
-font-size: 18px;
-line-height: 21px;
-}
-
-h3 {
-color: white;
-font-family: Roboto;
-font-style: normal;
-font-weight: bold;
-font-size: 30px;
-line-height: 47px;
-text-decoration: white;
-text-align: center;
-margin-bottom: 3rem;
-background-color: none ;
-border-style: none;
-
-}
-
-.tag {
-    background: #FFFFFF;
-    border: 4px solid #FFFFFF;
+    padding: 10px 0px;
+    margin: 0;
+    margin-left: -50px;
+    border: none;
     box-sizing: border-box;
     border-radius: 30px;
-    width: 10rem;
-    height: auto;
-    color: black;
-    text-decoration: none;
-    width: 262px;
-    height: 57px;
+    cursor: pointer;
+    font-size: 22px;
+  }
+
+  /* Style the container */
+  .container {
+    border-radius: 5px;
+    background-color: white;
+    padding: 20px;
     text-align: center;
-    padding-top: 5px;
 
     font-family: Roboto;
     font-style: normal;
-    font-weight: bold;
-    font-size: 25px;
+    font-weight: normal;
 
-}
+    line-height: 21px;
 
-a{
-    color: white;
-}
-.circle{
-    margin-top: 7rem;
-    border-radius: 50%;
-    background-color: white;
-    width: 233px;
-    height: 235px;
-    background: #FFFFFF;
-    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-    z-index: 3;
+  }
 
-}
+  .group {
+      margin-top:35%;
+  }
+  .group img{
+    width: 100px;
+    height: 100px;
+    margin-top: 30px;
+    margin-bottom: -30px;
 
-h4{
-    color: white;
-font-family: Roboto;
-font-style: normal;
-font-weight: bold;
-font-size: 30px;
-line-height: 47px;
+  }
 
-width: 20rem;
-text-align: center;
-top:33%;
+  /* Clear floats after the columns */
+  .row:after {
+    content: "";
+    display: table;
+    clear: both;
 
-}
+  }
+  .row{
+    margin-top: 0px;
+  }
 
-hr{
-    color: white;
-}
 
-.section-header{
-    position: relative;
-    background-color: white;
-   
 
-}
-.custom-shape-divider-top-1600042292 {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    overflow: hidden;
-    line-height: 0;
-}
-
-.custom-shape-divider-top-1600042292 svg {
-    position: relative;
-    display: block;
-    width: calc(100% + 1.3px);
-    height:370px;
-}
-
-.custom-shape-divider-top-1600042292 .shape-fill {
-    fill:  #33B6FF;
-}
-
-.tarjetas{
-margin: 3rem;
-background-color: #FFFFFF;
-border: 1px solid #C4C4C4;
-box-sizing: border-box;
-box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.3);
-border-radius: 20px;
-display: flex;
-flex-direction: row;
-justify-content: space-evenly;
-align-items: center;
-padding: 2rem;
-}
-
-.indicadores {
-    color: black;
-    text-align: left;
-    margin: 4px;
-    padding: 5px;
-}
-
-.indicadores-min {
-    color: black;
-    text-align: left;
-    font-size: 18px;
-    margin: 4px;
-    padding: 5px;
-    font-weight: lighter;
-}
-
-.kpi{
-    width: 66px;
-height: 66px;
-left: 270px;
-top: 317px;
-
-background: #88DB91;
-border-radius: 50%;
-display: flex;
-justify-content: center;
-align-items: center;
-}
-
-.kpi-red{
-    width: 66px;
-height: 66px;
-left: 270px;
-top: 317px;
-
-background: red;
-border-radius: 50%;
-display: flex;
-justify-content: center;
-align-items: center;
-}
-
-.app-menu {
-    background-color: white;
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-    flex-direction: row;
-    
-    margin: 50px;
-   
-}
-
-.app-menu>a{
-    max-width: 100%;
-    max-height: 33%;
-    background-color: white;
-}
-
-.img-menu{
-    width: 3rem;
-    height: auto;
-    margin: 0;
-}
-
-@media screen and (max-width: 375px) {
-    .app-menu {
-        background-color: white;
-        display: flex;
-        justify-content: space-around;
-        align-items: center;
-        flex-direction: row;
-       
-        margin: 0;
-        padding: 0;
-        margin: 50px;
+  /* Responsive layout - when the screen is less than 600px wide, make the two columns stack on top of each other instead of next to each other */
+  @media screen and (max-width: 600px) {
+    input[type=submit] {
+      width: 100%;
+      margin-top: 0px;
     }
-    .app-menu>a{
-        max-width: 100%;
-        max-height: 33%;
-        background-color: white;
-    }
-    .img-menu{
-        width: 2rem;
-        height: auto;
-        margin: 0;
-    }
-}
-
-.scale  {
-    width: 50%;
-}
-
-.scale-img{
-        width: 100%;
-        margin: 0;
-       
-}
+  }
