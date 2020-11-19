@@ -24,12 +24,12 @@ export class FirebaseService {
     return this.firestore.collection('cats').doc(documentId).snapshotChanges();
   }
 
-  //Obtiene todos los gatos
+  //Obtiene todos los objetos
   public getCats() {
     return this.firestore.collection('cats').snapshotChanges();
   }
 
-  //Actualiza un gato
+  //Actualiza un objeto
   public updateCat(documentId: string, data: any) {
     return this.firestore.collection('cats').doc(documentId).set(data);
   } */

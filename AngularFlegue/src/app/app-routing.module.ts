@@ -24,33 +24,40 @@ import {SignosVitalesHistorialComponent} from './components/signos-vitales-histo
 import {UserAddComponent} from './components/user-add/user-add.component';
 import {UserDeleteComponent} from './components/user-delete/user-delete.component';
 import {UserShowComponent} from './components/user-show/user-show.component';
+import { AngularFireAuthGuard, redirectUnauthorizedTo, redirectLoggedInTo } from '@angular/fire/auth-guard';
+import { AuthmasterGuard } from './services/firebase/authmaster.guard';
+import { CuidadorGuard } from './services/firebase/cuidador.guard';
+import { AbuelitoGuard } from './services/firebase/abuelito.guard';
+
+const redirectUnauthorizedToLogin = () => redirectUnauthorizedTo(['login']);
+const redirectToDashboard = redirectLoggedInTo(['']);
+const redirectToCuidador = redirectLoggedInTo(['']);
 
 
 const routes: Routes = [
-  {path: '', redirectTo: '/log-in', pathMatch: 'full'},
-  {path: 'appointment', component: AppointmentComponent},
-  {path: 'appointment-form', component: AppointmentFormComponent},
-  {path: 'appointment-edit/:id', component: AppointmentFormEditComponent},
-  {path: 'appointment-show/:id', component: AppointmentShowComponent},
-  {path: 'chatbot', component: ChatBotComponent},
-  {path: 'emergency-button', component: EmergencyButtonComponent},
-  {path: 'estado-animo', component: EstadoDeAnimoComponent},
+  {path: 'login', component: LoginComponent},
+  {path: 'appointment', component: AppointmentComponent, canActivate: [AbuelitoGuard]},
+  {path: 'appointment-form', component: AppointmentFormComponent, canActivate: [AbuelitoGuard]},
+  {path: 'appointment-edit/:id', component: AppointmentFormEditComponent, canActivate: [AbuelitoGuard]},
+  {path: 'appointment-show/:id', component: AppointmentShowComponent, canActivate: [AbuelitoGuard]},
+  {path: 'chatbot', component: ChatBotComponent, canActivate: [AbuelitoGuard]},
+  {path: '', component: EmergencyButtonComponent, canActivate: [AuthmasterGuard] },
+  {path: 'estado-animo', component: EstadoDeAnimoComponent, canActivate: [AbuelitoGuard]},
   {path: 'inicio', component: InicioComponent},
-  {path: 'log-in', component: LoginComponent},
-  {path: 'medicinas', component: MedicinasComponent},
-  {path: 'medicinas-form', component: MedicinasFormComponent},
-  {path: 'medicinas-edit/:id', component: MedicinasFormEditComponent},
-  {path: 'medicinas-show/:id', component: MedicinasShowComponent},
+  {path: 'medicinas', component: MedicinasComponent, canActivate: [AbuelitoGuard]},
+  {path: 'medicinas-form', component: MedicinasFormComponent, canActivate: [AbuelitoGuard]},
+  {path: 'medicinas-edit/:id', component: MedicinasFormEditComponent, canActivate: [AbuelitoGuard]},
+  {path: 'medicinas-show/:id', component: MedicinasShowComponent, canActivate: [AbuelitoGuard]},
   {path: 'register', component: RegisterComponent},
-  {path: 'resumen-cuidador', component: ResumenCuidadorComponent},
-  {path: 'resumen-usuario', component: ResumenUsuarioComponent},
-  {path: 'select-user', component: SelectUserComponent},
-  {path: 'signos-vitales', component: SignosVitalesComponent},
-  {path: 'signos-vitales-button', component: SignosVitalesButtonComponent},
-  {path: 'signos-vitales-historial', component: SignosVitalesHistorialComponent},
-  {path: 'user-add', component: UserAddComponent},
-  {path: 'user-delete', component: UserDeleteComponent},
-  {path: 'user-show', component: UserShowComponent},
+  {path: 'resumen-cuidador', component: ResumenCuidadorComponent, canActivate: [CuidadorGuard]},
+  {path: 'resumen-usuario', component: ResumenUsuarioComponent, canActivate: [AbuelitoGuard]},
+  {path: 'select-user', component: SelectUserComponent, canActivate: [CuidadorGuard]},
+  {path: 'signos-vitales', component: SignosVitalesComponent, canActivate: [AbuelitoGuard]},
+  {path: 'signos-vitales-button', component: SignosVitalesButtonComponent, canActivate: [AbuelitoGuard]},
+  {path: 'signos-vitales-historial', component: SignosVitalesHistorialComponent, canActivate: [AbuelitoGuard]},
+  {path: 'user-add', component: UserAddComponent, canActivate: [CuidadorGuard]},
+  {path: 'user-delete', component: UserDeleteComponent, canActivate: [CuidadorGuard]},
+  {path: 'user-show', component: UserShowComponent, canActivate: [CuidadorGuard]},
 ];
 
 @NgModule({

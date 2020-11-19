@@ -2,6 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { AppointmentsService } from '../../services/appointments/appointments.service';
 import { MedicinesService } from '../../services/medicines/medicines.service'
 import { FeelingsService } from '../../services/feelings/feelings.service';
+import { AngularFireAuth } from '@angular/fire/auth';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-resumen-cuidador',
@@ -11,10 +13,12 @@ import { FeelingsService } from '../../services/feelings/feelings.service';
 export class ResumenCuidadorComponent implements OnInit {
 
   constructor(
+    private auth: AngularFireAuth, private router: Router,
     public appointmentsService: AppointmentsService,
     public medicinesService: MedicinesService,
     public feelingsService: FeelingsService
   ) { }
+
 
   ngOnInit(): void {
     this.getAppointments();
@@ -71,6 +75,24 @@ export class ResumenCuidadorComponent implements OnInit {
       },
       err => console.error(err)
     )
+
+  }
+  logout(){
+    this.auth.signOut().then(() => this.router.navigate(['login']));
+    //let user = this.auth.currentUser;
+    //console.log(user);
+
+
+    /* this.auth.onAuthStateChanged((user: firebase.User) => {
+      if (user) {
+        console.log('User is logged in');
+        console.log(user.uid);
+
+      } else {
+        console.log('User is not logged in');
+
+      }
+    }); */
 
   }
 

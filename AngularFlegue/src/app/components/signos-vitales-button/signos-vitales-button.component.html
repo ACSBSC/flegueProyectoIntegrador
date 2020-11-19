@@ -1,14 +1,48 @@
+
 <body>
-    <section>
-        <div>
-            <h2>Flegue</h2>
+
+    <div class="container">
+
+      <div>
+          <span id="ellipse_blue"></span>
+          <div class="over">
+              <h2 class="logo">Flegue</h2>
+              <h1 class = "title"> Ingresa Signos Vitales</h1>
+
+          </div>
+      </div>
+
+        <div class="group">
+          <img src="../../../assets/images/cardiovascular.png" alt="signosvit" class="img_inicio">
+
+          <form  id="myForm">
+              <div class="row">
+                  <h2 class="subtitle"><label for="fname">SYS</label></h2>
+                  <input type="text" id="name" name="name" placeholder="SYS" required>
+              </div>
+              <div class="row">
+                  <h2 class="subtitle"><label for="subject">DIA</label></h2>
+                  <input type="text" id="speciality" name="speciality" placeholder="DIA">
+              </div>
+              <div class="row">
+                  <h2 class="subtitle"><label for="subject">PULSO</label></h2>
+                  <input type="text" id="place" name="place" placeholder="PULSO">
+              </div>
+
+              <div class="row">
+                  <div class="place">
+                      <button type="submit" routerLink="/signos-vitales">Listo</button>
+                  </div>
+              </div>
+
+          </form>
+
         </div>
-        <div class="circle">
-            <a routerLink="/signos-vitales">
-                <img src="../../../assets/images/cardiovascular.png" alt="" style="width: 150px; height: auto;">
-            </a>
-        </div>
-        <h4>Presiona para checar signos vitales</h4>
-        
-    </section>
+
+  </div>
+
 </body>
+
+
+
+<router-outlet></router-outlet>
