@@ -15,23 +15,40 @@
         <div class="group">
           <img src="../../../assets/images/cardiovascular.png" alt="signosvit" class="img_inicio">
 
-          <form  id="myForm">
+          <form  id="myForm" #signForm="ngForm" (ngSubmit)="addSign(signForm)">
               <div class="row">
                   <h2 class="subtitle"><label for="fname">SYS</label></h2>
-                  <input type="text" id="name" name="name" placeholder="SYS" required>
+                  <input
+                    type="text"
+                    id="name"
+                    name="sys"
+                    placeholder="SYS"
+                    required
+                    [(ngModel)]="signsService.selectedSign.sys">
               </div>
               <div class="row">
                   <h2 class="subtitle"><label for="subject">DIA</label></h2>
-                  <input type="text" id="speciality" name="speciality" placeholder="DIA">
+                  <input
+                    type="text"
+                    id="dia"
+                    name="day"
+                    placeholder="DIA"
+                    [(ngModel)]="signsService.selectedSign.day"
+                    >
               </div>
               <div class="row">
                   <h2 class="subtitle"><label for="subject">PULSO</label></h2>
-                  <input type="text" id="place" name="place" placeholder="PULSO">
+                  <input
+                    type="text"
+                    id="place"
+                    name="pulse"
+                    placeholder="PULSO"
+                    [(ngModel)]="signsService.selectedSign.pulse">
               </div>
 
               <div class="row">
                   <div class="place">
-                      <button type="submit" routerLink="/signos-vitales">Listo</button>
+                      <button type="submit">Listo</button>
                   </div>
               </div>
 

@@ -11,6 +11,7 @@ import { Router } from '@angular/router';
   styleUrls: ['./resumen-cuidador.component.css']
 })
 export class ResumenCuidadorComponent implements OnInit {
+  icon= 'HOLAAA';
 
   constructor(
     private auth: AngularFireAuth, private router: Router,
@@ -62,6 +63,7 @@ export class ResumenCuidadorComponent implements OnInit {
   }
 
   getFeelings() {
+    console.log("icon");
     this.medicinesService.getMedicines().subscribe(
       res => {
         let array = [];

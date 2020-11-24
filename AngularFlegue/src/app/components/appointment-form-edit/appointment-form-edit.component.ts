@@ -3,6 +3,7 @@ import { ActivatedRoute } from '@angular/router';
 import { NgForm } from '@angular/forms';
 
 import { AppointmentsService } from '../../services/appointments/appointments.service'
+import { FirebaseService } from '../../services/firebase/firebase.service';
 import { Appointment } from '../../models/appointment';
 
 
@@ -12,15 +13,18 @@ import { Appointment } from '../../models/appointment';
   styleUrls: ['./appointment-form-edit.component.css']
 })
 export class AppointmentFormEditComponent implements OnInit {
+  user;
   appointment;
   error;
 
   constructor(
     public route: ActivatedRoute,
-    public appointmentsService: AppointmentsService
+    public appointmentsService: AppointmentsService,
+    public firebaseService: FirebaseService
   ) { }
 
   ngOnInit(): void {
+    this.user = this.firebaseService.getUserId();
     this.loadAppointment();
   }
 
@@ -36,15 +40,14 @@ export class AppointmentFormEditComponent implements OnInit {
   editAppointment(form: NgForm) {
     console.log(form.value);
     const appointmentId = this.route.snapshot.paramMap.get('id');
-    this.appointmentsService.updateAppointment(appointmentId, form.value).subscribe(
+    let output = Object.assign(form.value, this.user);
+    console.log("output concat", output);
+    this.appointmentsService.updateAppointment(appointmentId, output).subscribe(
       res => {
-        console.log(res),
+        console.log("result", res),
         window.location.href = `/appointment-show/${appointmentId}`
       },
       err => console.error(err)
     )
-
-
   }
-
 }
