@@ -1,14 +1,17 @@
 <link href="https://fonts.googleapis.com/css?family=Roboto&display=swap" rel="stylesheet" />
 <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+<meta name="viewport" content="width-device-width, initial-scale=1">
+
 <body>
 
-	<div class="container">
+	<!--div class="container">
 		<div id="ellipse_blue">
-            <h2 style="margin-top:100px;">Flegue</h2>
-        	<h1>Chatbot</h1>
-            <div class="circle"><img src="../../assets/images/v52_90.png" alt="salud" id="img_icon"></div>
-        </div>
-        <div class="info">
+      <h2 style="margin-top:100px;">Flegue</h2>
+      <h1>Chatbot</h1>
+      <div class="circle"><img src="../../assets/images/v52_90.png" alt="salud" id="img_icon"></div>
+    </div>
+
+    <div class="info">
 			<div class="blue-text">
 				<p>Sample Text 1</p>
 			</div>
@@ -22,22 +25,30 @@
 				<p>Sample Text 4</p>
 			</div>
 
-        </div>
+    </div>
+  </div-->
+<script src="https://www.gstatic.com/dialogflow-console/fast/messenger-cx/bootstrap.js?v=1"></script>
+      <df-messenger
+          df-cx="true"
+          chat-title="Doctor Flegue"
+          agent-id="609a66a6-706a-4119-83e7-c22594d44641"
+          language-code="es"
+        style="z-index:3;"></df-messenger>
 
-		<footer>
-			<div class="text-input">
-				<input type="text" class="form-control" placeholder="Enter Text" style="width: 100%; background: rgba(229,229,229,1);">
-			</div>
-            <div class="imgs">
-              <a routerLink="/signos-vitales-button"><img src="../../assets/images/heart.png" alt="salud" id="img_footer"></a>
-              <a routerLink="/medicinas"><img src="../../assets/images/pill.png" alt="salud" id="img_footer"></a>
-              <a routerLink="/appointment"><img src="../../assets/images/scope.png" alt="salud" id="img_footer"></a>
-              <a routerLink=""><img src="../../assets/images/llamada-de-emergencia.png" alt="salud" id="img_footer"></a>
-              <a routerLink="/resumen-usuario"><img src="../../assets/images/tabla_f.png" alt="salud" id="img_footer"></a>
-              <a routerLink="/chatbot"><img src="../../assets/images/chatbot.png" alt="salud" id="img_footer"></a>
-              <a routerLink="/estado-animo"><img src="../../assets/images/emotion.png" alt="salud" id="img_footer"></a>
-            </div>
-        </footer>
-	</div>
 </body>
+<footer>
+  <!--div class="text-input">
+    <input type="text" class="form-control" placeholder="Enter Text" style="width: 100%; background: rgba(229,229,229,1);">
+  </div-->
+  <div class="imgs">
+    <a routerLink="/signos-vitales-button"><img src="../../assets/images/heart.png" alt="salud" id="img_footer"></a>
+    <a routerLink="/medicinas"><img src="../../assets/images/pill.png" alt="salud" id="img_footer"></a>
+    <a routerLink="/appointment"><img src="../../assets/images/scope.png" alt="salud" id="img_footer"></a>
+    <a routerLink=""><img src="../../assets/images/llamada-de-emergencia.png" alt="salud" id="img_footer"></a>
+    <a routerLink="/resumen-usuario"><img src="../../assets/images/tabla_f.png" alt="salud" id="img_footer"></a>
+    <a routerLink="/chatbot"><img src="../../assets/images/chatbot.png" alt="salud" id="img_footer"></a>
+    <a routerLink="/estado-animo"><img src="../../assets/images/emotion.png" alt="salud" id="img_footer"></a>
+  </div>
+</footer>
+
 <router-outlet></router-outlet>
