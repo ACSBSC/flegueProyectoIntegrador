@@ -3,6 +3,7 @@ import { NgModule } from '@angular/core';
 import { HttpClientModule } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
 
+
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { AppointmentComponent } from './components/appointment/appointment.component';
@@ -60,7 +61,7 @@ import { FirebaseAuthService } from "./services/firebase/firebase-auth.service";
     UserDeleteComponent,
     UserShowComponent,
     SignosVitalesHistorialComponent,
-    ResumenCuidadorComponent
+    ResumenCuidadorComponent,
   ],
   imports: [
     BrowserModule,
