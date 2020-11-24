@@ -4,6 +4,6 @@ export interface Appointment {
   day: string
   location: string
   doctor: string
-  user?: string
+  user: string
   status?: string
 }

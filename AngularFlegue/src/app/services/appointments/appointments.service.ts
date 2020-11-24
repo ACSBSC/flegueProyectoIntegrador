@@ -2,6 +2,8 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Appointment } from '../../models/appointment';
 import { Observable } from 'rxjs';
+import * as Firebase from 'firebase/app';
+import { AngularFireAuth } from '@angular/fire/auth';
 
 
 @Injectable({
@@ -21,12 +23,17 @@ export class AppointmentsService {
     name: '',
     location: '',
     day: '',
+    user: ''
 
   };
   appointments: Appointment[] = [];
 
+  response;
+
 
   constructor(private http: HttpClient) { }
+
+
 
   getAppointments() {
     return this.http.get<Appointment[]>(this.URL_API_GET_ALL);
@@ -57,5 +64,17 @@ export class AppointmentsService {
     return this.http.put(`${this.URL_API_PUT_STATUS}/${id}`, response);
 
   }
+
+  /*
+  getUserId(): Observable<any> {
+    const userId = Firebase.auth().currentUser.uid;
+
+    let obj  = '{"user": "' + userId + '"}';
+    this.response = JSON.parse(obj);
+    console.log("USER OBJ", this.response);
+    return (this.response);
+
+  }
+  */
 
 }

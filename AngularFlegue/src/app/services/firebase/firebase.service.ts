@@ -1,17 +1,19 @@
 import { Injectable } from '@angular/core';
 import { AngularFireDatabase, AngularFireList } from '@angular/fire/database';
 import { from, Observable } from 'rxjs';
+import * as Firebase from 'firebase/app';
+import { AngularFireAuth } from '@angular/fire/auth';
 
 
 @Injectable({
   providedIn: 'root'
 })
 export class FirebaseService {
-  
+
 
   constructor(private db: AngularFireDatabase) { }
 
-  
+
 
   /* //Crear objeto
   public createObject(data: {att1: string, att2: string}) {
@@ -33,5 +35,15 @@ export class FirebaseService {
   public updateCat(documentId: string, data: any) {
     return this.firestore.collection('cats').doc(documentId).set(data);
   } */
+
+  getUserId(): Observable<any> {
+    const userId = Firebase.auth().currentUser.uid;
+
+    let obj  = '{"user": "' + userId + '"}';
+    let response = JSON.parse(obj);
+    console.log("USER OBJ", response);
+    return (response);
+
+  }
 
 }
