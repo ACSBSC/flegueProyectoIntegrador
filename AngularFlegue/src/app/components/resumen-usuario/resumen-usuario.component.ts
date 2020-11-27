@@ -39,7 +39,7 @@ export class ResumenUsuarioComponent implements OnInit {
 
   }
 
-  getMedicines() {
+  getFeelings() {
     this.feelingsService.getFeelings().subscribe(
       res => {
         let array = [];
@@ -57,7 +57,24 @@ export class ResumenUsuarioComponent implements OnInit {
 
   }
 
-  getFeelings() {
+  getFeelingImage(feeling) {
+    let img = '../../../assets/images/smile.jpg';
+    console.log("jfkalñ", feeling);
+
+    if (feeling === "feliz") {
+      img = '../../../assets/images/smile.jpg';
+
+    } else if (feeling === "irritado") {
+      img = '../../../assets/images/grave.jpg';
+
+    } else if (feeling === "triste") {
+      img = '../../../assets/images/triste.jpg';
+
+    }
+    return img;
+  }
+
+  getMedicines() {
     this.medicinesService.getMedicines().subscribe(
       res => {
         let array = [];

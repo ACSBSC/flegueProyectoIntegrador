@@ -44,7 +44,7 @@ export class ResumenCuidadorComponent implements OnInit {
 
   }
 
-  getMedicines() {
+  getFeelings() {
     this.feelingsService.getFeelings().subscribe(
       res => {
         let array = [];
@@ -62,7 +62,7 @@ export class ResumenCuidadorComponent implements OnInit {
 
   }
 
-  getFeelings() {
+  getMedicines() {
     console.log("icon");
     this.medicinesService.getMedicines().subscribe(
       res => {
