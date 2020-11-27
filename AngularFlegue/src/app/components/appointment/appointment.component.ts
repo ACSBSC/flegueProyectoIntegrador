@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { AppointmentsService } from '../../services/appointments/appointments.service';
+import * as Firebase from 'firebase/app';
 
 @Component({
   selector: 'app-appointment',
@@ -16,12 +17,17 @@ export class AppointmentComponent implements OnInit {
   }
 
   getAppointments() {
+    const userId = Firebase.auth().currentUser.uid;
+    console.log("Uid", userId);
+
     this.appointmentsService.getAppointments().subscribe(
       res => {
         let array = [];
         for (let key in res) {
           if(res.hasOwnProperty(key)) {
-            array.push(res[key]);
+            if (res[key].user == userId) {
+              array.push(res[key]);
+            }
           }
         }
         this.appointmentsService.appointments = array;

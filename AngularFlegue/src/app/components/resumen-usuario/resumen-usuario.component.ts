@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { AppointmentsService } from '../../services/appointments/appointments.service';
 import { MedicinesService } from '../../services/medicines/medicines.service'
 import { FeelingsService } from '../../services/feelings/feelings.service';
+import * as Firebase from 'firebase/app';
 
 @Component({
   selector: 'app-resumen-usuario',
@@ -23,12 +24,15 @@ export class ResumenUsuarioComponent implements OnInit {
   }
 
   getAppointments() {
+    const userId = Firebase.auth().currentUser.uid;
     this.appointmentsService.getAppointments().subscribe(
       res => {
         let array = [];
         for (let key in res) {
           if(res.hasOwnProperty(key)) {
-            array.push(res[key]);
+            if (res[key].user == userId) {
+              array.push(res[key]);
+            }
           }
         }
         this.appointmentsService.appointments = array;
@@ -40,12 +44,15 @@ export class ResumenUsuarioComponent implements OnInit {
   }
 
   getMedicines() {
+    const userId = Firebase.auth().currentUser.uid;
     this.feelingsService.getFeelings().subscribe(
       res => {
         let array = [];
         for (let key in res) {
           if(res.hasOwnProperty(key)) {
-            array.push(res[key]);
+            if (res[key].user == userId) {
+              array.push(res[key]);
+            }
           }
         }
         console.log('array', array);
@@ -58,12 +65,15 @@ export class ResumenUsuarioComponent implements OnInit {
   }
 
   getFeelings() {
+    const userId = Firebase.auth().currentUser.uid;
     this.medicinesService.getMedicines().subscribe(
       res => {
         let array = [];
         for (let key in res) {
           if(res.hasOwnProperty(key)) {
-            array.push(res[key]);
+            if (res[key].user == userId) {
+              array.push(res[key]);
+            }
           }
         }
         this.medicinesService.medicines = array;
