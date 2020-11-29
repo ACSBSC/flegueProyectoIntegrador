@@ -24,21 +24,20 @@ export class SignosVitalesButtonComponent implements OnInit {
   ) { }
 
   user;
+  lastSign;
 
   ngOnInit(): void {
     this.user = this.firebaseService.getUserId();
 
   }
 
-  addSign(form: NgForm) {
-    console.log("FORMS", form.value);
+  async addSign(form: NgForm){
     let output = Object.assign(form.value, this.user);
-    console.log("USER", this.user);
-    console.log("output concat", output);
     this.signsService.createSign(output).subscribe(
       res => {
-        console.log("res signos vitales", res),
-        window.location.href = `/signos-vitales`
+        this.lastSign = new Sign(res);
+        window.location.href = `/signos-vitales`;
+
       },
       err => console.error(err)
     )

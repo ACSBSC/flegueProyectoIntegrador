@@ -497,3 +497,17 @@ footer{
   left:29%;
   margin-top:-10px;
   }
+
+  /* Style the container */
+.container {
+  border-radius: 5px;
+  background-color: white;
+  padding: 20px;
+  text-align: center;
+
+  font-family: Roboto;
+  font-style: normal;
+  font-weight: normal;
+
+  line-height: 21px;
+}

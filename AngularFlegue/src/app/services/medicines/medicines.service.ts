@@ -8,7 +8,10 @@ import { Observable } from 'rxjs';
 })
 export class MedicinesService {
 
-  URL_API_GET_ALL = 'http://localhost:3000/api/get/meds/all';
+  URL_API_GET_ALL = 'http://localhost:3000/api/get/meds/all'
+  URL_API_GET_PEND = 'http://localhost:3000/api/get/meds/pending';
+  URL_API_GET_MISS = 'http://localhost:3000/api/get/meds/missing';
+  URL_API_GET_COM = 'http://localhost:3000/api/get/meds/completed';
   URL_API_POST = 'http://localhost:3000/api/post/meds/';
   URL_API_GET_ID = 'http://localhost:3000/api/get/meds/cita';
   URL_API_DELETE = 'http://localhost:3000/api/delete/meds/cita';
@@ -23,6 +26,9 @@ export class MedicinesService {
   };
 
   medicines: Medicine[] = [];
+  pending: Medicine[] = [];
+  missing: Medicine[] = [];
+  completed: Medicine[] = [];
 
   constructor(private http: HttpClient) { }
 
@@ -30,6 +36,27 @@ export class MedicinesService {
     // petición a la API
     console.log('service')
     return this.http.get<Medicine[]>(this.URL_API_GET_ALL);
+
+  }
+
+  getMedicinesPending() {
+    // petición a la API
+    console.log('service')
+    return this.http.get<Medicine[]>(this.URL_API_GET_PEND);
+
+  }
+
+  getMedicinesMissing() {
+    // petición a la API
+    console.log('service')
+    return this.http.get<Medicine[]>(this.URL_API_GET_MISS);
+
+  }
+
+  getMedicinesCompleted() {
+    // petición a la API
+    console.log('service')
+    return this.http.get<Medicine[]>(this.URL_API_GET_COM);
 
   }
 

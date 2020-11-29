@@ -2,9 +2,12 @@ import { Component, OnInit } from '@angular/core';
 import { AppointmentsService } from '../../services/appointments/appointments.service';
 import { MedicinesService } from '../../services/medicines/medicines.service'
 import { FeelingsService } from '../../services/feelings/feelings.service';
+import { SignsService } from '../../services/signs/signs.service';
 import { AngularFireAuth } from '@angular/fire/auth';
 import { Router } from '@angular/router';
 import { ActivatedRoute } from '@angular/router';
+import * as moment from 'moment';
+
 
 @Component({
   selector: 'app-resumen-cuidador',
@@ -12,25 +15,35 @@ import { ActivatedRoute } from '@angular/router';
   styleUrls: ['./resumen-cuidador.component.css']
 })
 export class ResumenCuidadorComponent implements OnInit {
-  icon= 'HOLAAA';
   abueId = this.route.snapshot.paramMap.get('id');
+
   constructor(
     private auth: AngularFireAuth, private router: Router,
     public appointmentsService: AppointmentsService,
     public medicinesService: MedicinesService,
     public feelingsService: FeelingsService,
-    private route: ActivatedRoute
+    private route: ActivatedRoute,
+    public signsService: SignsService
   ) { }
 
 
   ngOnInit(): void {
+    this.getAppointmentsPending();
+    this.getAppointmentsCompleted();
+    this.getAppointmentsMissing();
+
+    this.getMedicinesPending();
+    this.getMedicinesCompleted();
+    this.getMedicinesMissing();
+
+
     this.getAppointments();
     this.getMedicines();
     this.getFeelings();
   }
 
   getAppointments() {
-    
+
 
     this.appointmentsService.getAppointments().subscribe(
       res => {
@@ -50,7 +63,59 @@ export class ResumenCuidadorComponent implements OnInit {
 
   }
 
-  getMedicines() {
+  getAppointmentsPending() {
+    this.appointmentsService.getAppointmentsPending().subscribe(
+      res => {
+        let array = [];
+        for (let key in res) {
+          if(res.hasOwnProperty(key)) {
+            array.push(res[key]);
+          }
+        }
+        this.appointmentsService.pending = array;
+
+      },
+      err => console.error(err)
+    )
+
+  }
+
+  getAppointmentsMissing() {
+    this.appointmentsService.getAppointmentsMissing().subscribe(
+      res => {
+        let array = [];
+        for (let key in res) {
+          if(res.hasOwnProperty(key)) {
+            array.push(res[key]);
+          }
+        }
+        this.appointmentsService.missing = array;
+
+      },
+      err => console.error(err)
+    )
+
+  }
+
+  getAppointmentsCompleted() {
+    this.appointmentsService.getAppointmentsCompleted().subscribe(
+      res => {
+        let array = [];
+        for (let key in res) {
+          if(res.hasOwnProperty(key)) {
+            array.push(res[key]);
+          }
+        }
+        this.appointmentsService.completed = array;
+
+      },
+      err => console.error(err)
+    )
+
+  }
+
+
+  getFeelings() {
     this.feelingsService.getFeelings().subscribe(
       res => {
         let array = [];
@@ -70,7 +135,7 @@ export class ResumenCuidadorComponent implements OnInit {
 
   }
 
-  getFeelings() {
+  getMedicines() {
     console.log("icon");
     this.medicinesService.getMedicines().subscribe(
       res => {
@@ -89,6 +154,145 @@ export class ResumenCuidadorComponent implements OnInit {
     )
 
   }
+
+
+  getMedicinesPending() {
+    this.medicinesService.getMedicinesPending().subscribe(
+      res => {
+        let array = [];
+        for (let key in res) {
+          if(res.hasOwnProperty(key)) {
+            array.push(res[key]);
+          }
+        }
+        this.medicinesService.pending = array;
+
+      },
+      err => console.error(err)
+    )
+
+  }
+
+  getMedicinesMissing() {
+    this.medicinesService.getMedicinesMissing().subscribe(
+      res => {
+        let array = [];
+        for (let key in res) {
+          if(res.hasOwnProperty(key)) {
+            array.push(res[key]);
+          }
+        }
+        this.medicinesService.missing = array;
+
+      },
+      err => console.error(err)
+    )
+
+  }
+
+  getMedicinesCompleted() {
+    this.medicinesService.getMedicinesCompleted().subscribe(
+      res => {
+        let array = [];
+        for (let key in res) {
+          if(res.hasOwnProperty(key)) {
+            array.push(res[key]);
+          }
+        }
+        this.medicinesService.completed = array;
+
+      },
+      err => console.error(err)
+    )
+
+  }
+
+  getSigns() {
+    this.signsService.getSigns().subscribe(
+      res => {
+        let array = [];
+        for (let key in res) {
+          if(res.hasOwnProperty(key)) {
+            array.push(res[key]);
+          }
+        }
+        this.signsService.signs = array;
+
+      },
+      err => console.error(err)
+    );
+
+  }
+
+  getDate(date){
+    return moment(date).format('LLLL');
+  }
+
+
+  // CAMBIAR VALORES
+  getColorSys(sys) {
+    let color = 'gray';
+    if (sys <= 89) {
+      color = 'rgb(0, 206, 209)';
+
+    }else if (sys >= 90 && sys <= 199) {
+      color = 'rgb(202,227,101)';
+
+    }else if (sys >= 120 && sys <= 128) {
+      color = 'rgb(255,223,89)';
+
+    }else if (sys >= 130 && sys <= 139) {
+      color = 'rgb(255,190,89)';
+
+    }else if (sys >= 140 && sys <= 179) {
+      color = 'rgb(255,146,76)';
+
+    }else if (sys >= 180) {
+      color = 'rgb(255,15,14)';
+
+    }
+    return color;
+  }
+
+  getColorDay(day) {
+    let color = 'gray';
+    if (day <= 59) {
+      color = 'rgb(0, 206, 209)';
+
+    }else if (day >= 60 && day <= 70) {
+      color = 'rgb(202,227,101)';
+
+    }else if (day >= 80 && day <= 89) {
+      color = 'rgb(255,190,89)';
+
+    }else if (day >= 90 && day <= 120) {
+      color = 'rgb(255,146,76)';
+
+    }else if (day > 120) {
+      color = 'rgb(255,15,14)';
+
+    }
+    return color;
+  }
+
+  getColorPulse(pulse) {
+    let color = 'gray';
+    if (pulse <= 59) {
+      color = 'rgb(0, 206, 209)';
+
+    }else if (pulse >= 60 && pulse <= 100) {
+      color = 'rgb(202,227,101)';
+
+
+    }else if (pulse > 100) {
+      color = 'rgb(255,15,14)';
+
+    }
+    return color;
+  }
+
+
+
   logout(){
     this.auth.signOut().then(() => this.router.navigate(['login']));
     //let user = this.auth.currentUser;

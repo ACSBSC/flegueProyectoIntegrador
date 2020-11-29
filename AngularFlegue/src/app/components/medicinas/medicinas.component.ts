@@ -13,15 +13,14 @@ export class MedicinasComponent implements OnInit {
   constructor(public medicinesService: MedicinesService) { }
 
   ngOnInit(): void {
-    this.getMedicines();
+    this.getMedicinesPending();
   }
-  
 
-  getMedicines() {
+
+  getMedicinesPending() {
     const userId = Firebase.auth().currentUser.uid;
     console.log("Uid", userId);
-
-    this.medicinesService.getMedicines().subscribe(
+    this.medicinesService.getMedicinesPending().subscribe(
       res => {
         let array = [];
         for (let key in res) {
@@ -29,14 +28,10 @@ export class MedicinasComponent implements OnInit {
             if (res[key].user == userId) {
               array.push(res[key]);
             }
-            
+
           }
         }
-        this.medicinesService.medicines = array;
-        
-        
-        console.log("Medicines array",array);
-        
+        this.medicinesService.pending = array;
 
       },
       err => console.error(err)

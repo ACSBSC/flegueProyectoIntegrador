@@ -12,15 +12,14 @@ export class AppointmentComponent implements OnInit {
   constructor(public appointmentsService: AppointmentsService) { }
 
   ngOnInit(): void {
-    this.getAppointments();
+    this.getAppointmentsPending();
 
   }
 
-  getAppointments() {
+  getAppointmentsPending() {
     const userId = Firebase.auth().currentUser.uid;
     console.log("Uid", userId);
-
-    this.appointmentsService.getAppointments().subscribe(
+    this.appointmentsService.getAppointmentsPending().subscribe(
       res => {
         let array = [];
         for (let key in res) {
@@ -30,7 +29,7 @@ export class AppointmentComponent implements OnInit {
             }
           }
         }
-        this.appointmentsService.appointments = array;
+        this.appointmentsService.pending = array;
 
       },
       err => console.error(err)

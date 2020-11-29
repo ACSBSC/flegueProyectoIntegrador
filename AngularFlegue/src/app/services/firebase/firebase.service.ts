@@ -37,8 +37,9 @@ export class FirebaseService {
   } */
 
   getUserId(): Observable<any> {
+    const hola = Firebase.auth();
     const userId = Firebase.auth().currentUser.uid;
-
+    console.log("user desde firebase:", userId);
     let obj  = '{"user": "' + userId + '"}';
     let response = JSON.parse(obj);
     console.log("USER OBJ", response);

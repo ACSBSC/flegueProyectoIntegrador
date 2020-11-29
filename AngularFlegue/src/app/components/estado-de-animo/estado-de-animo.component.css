@@ -39,31 +39,41 @@ input[type=text],input[type=tel],input[type=email],input[type=password], select{
     padding: 12px 12px 12px 0;
     display: inline-block;
   }
-  h1{
-    font-size: 20px;
-  }
-  h2{
-    font-size: 15px;
-  }
+  
   body{
     height: 100%;
   }
 
-  /* Style the submit button */
-  input[type=submit] {
-    width: 80%;
+  .boton{
+    width: 58%;
     height: 5%;
     background-color: #FF748F;
     color: white;
-    padding: 12px 30px;
+    padding: 5px 30px;
     border: none;
     box-sizing: border-box;
     border-radius: 30px;
     cursor: pointer;
     float: left;
-    font-size: 25px;
+    font-size: 15px;
     margin-bottom: 35px;
+    justify-content: center;
+    text-align: center;
   }
+
+  .boton2{
+    background-color: #FF748F;
+    text-align: center;
+    font-size: 15px;
+    border-color: #FF748F;
+    border: none;
+    color: white;
+    font-family: Roboto;
+
+  }
+
+  /* Style the submit button */
+  
 
   /* Style the container */
   .container {
@@ -71,11 +81,11 @@ input[type=text],input[type=tel],input[type=email],input[type=password], select{
     background-color: white;
     padding: 20px;
     text-align: center;
-
+  
     font-family: Roboto;
     font-style: normal;
     font-weight: normal;
-
+  
     line-height: 21px;
   }
 
@@ -98,23 +108,22 @@ input[type=text],input[type=tel],input[type=email],input[type=password], select{
     height: 30%;
     left: 0%;
     top: -10%;
-
+  
     background: linear-gradient(180deg, #33B6FF 0%, rgba(255, 255, 255, 0) 100%), #7291FF;
     border-bottom-right-radius: 80% 50%;
     border-bottom-left-radius: 80% 50%;
-
+  
     font-size: 35px;
     color:white;
   }
-
-.circle{
-  background-color: white;
-  border-radius: 50%;
-  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-  width: 150px;
-  height: 150px;
-  margin-left: 30%;
-}
+  .circle{
+    background-color: white;
+    border-radius: 50%;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    width: 100px;
+    height: 100px;
+    margin-left: 35%;
+  }
 
 #img_icon{
   width: 70%;

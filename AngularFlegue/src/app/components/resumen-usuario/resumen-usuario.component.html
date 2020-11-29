@@ -5,52 +5,64 @@
 		<title>Información de medicamento</title>
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
-	</head>
-	<body>
+  </head>
+  <link href="https://fonts.googleapis.com/css?family=Roboto&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 
+	<body>
+    <p>appointment works!</p>
     <div class="container">
       <div id="ellipse_blue">
-          <h2 style="margin-top:100px;" class="title">flegue</h2>
-          <h1 style="margin-top:-20px; font-size:35px;" class="title">Resumen</h1>
-
+        <h2 style="margin-top:100px;">flegue</h2>
+        <h1 style="margin-top:10px;">Resumen</h1>
+        <div class="circle"><img src="../../../assets/images/tabla.png" alt="salud" id="img_icon"></div>
       </div>
       <div class="info">
 
       <h1 class="card_title">Signos Vitales</h1>
 
-      <div id="signos_vitales" class="card">
+      <div id="signos_vitales" class="card"
+      *ngFor="let sign of signsService.signs">
         <div>
+          <h4>{{getDate(sign.date)}}</h4>
+
             <div id="section">
                 <h4 class="left">SYS</h4>
                 <p id="measure">mmHg</p>
 
-                <div class="circle" id="state">120</div>
+                <div class="circle" id="state"
+                [style.background-color]="getColorSys(sign.sys)">
+                {{sign.sys}}</div>
             </div>
 
             <div id="section">
               <h4 class="left">DIA</h4>
               <p id="measure">mmHg</p>
 
-              <div class="circle" id="state">70</div>
+              <div class="circle" id="state"
+              [style.background-color]="getColorDay(sign.day)">
+              {{sign.day}}</div>
           </div>
 
           <div id="section">
               <h4 class="left">PULSO</h4>
               <p id="measure">/min</p>
 
-              <div class="circle" id="state">80</div>
+              <div class="circle" id="state"
+              [style.background-color]="getColorPulse(sign.pulse)">
+              {{sign.pulse}}</div>
           </div>
 
         </div>
       </div>
 
       <h1 class="card_title">Citas</h1>
-
-      <div *ngFor="let appointment of appointmentsService.appointments">
+      <h3> Pendientes </h3>
+      <div *ngFor="let appointment of appointmentsService.pending">
         <div id="citas" class="card">
           <div id="section" style="height: 15%; ">
               <div class="circle" style="margin-left:15px; margin-top: 15px; float:left;">
-                  <img src="../../../assets/images/perfildoc.jpg" alt="doc" style="border-radius: 50%; width:100%;">
+                  <img src="../../../assets/images/v53_5.png" alt="doc" style="border-radius: 50%; width:100%;">
               </div>
               <div class="right">
                 <h4>{{appointment.name}}</h4>
@@ -60,26 +72,85 @@
 
               </div>
           </div>
-
         </div>
+      </div>
+      <h3> Completadas </h3>
+      <div *ngFor="let appointment of appointmentsService.completed">
+        <div id="citas" class="card">
+          <div id="section" style="height: 15%; ">
+              <div class="circle" style="margin-left:15px; margin-top: 15px; float:left;">
+                  <img src="../../../assets/images/v53_5.png" alt="doc" style="border-radius: 50%; width:100%;">
+              </div>
+              <div class="right">
+                <h4>{{appointment.name}}</h4>
+                <p> {{appointment.doctor}} </p>
+                <p>{{appointment.location}}</p>
+                <p style="color: #7291FF;"> {{appointment.day}} </p>
 
+              </div>
+          </div>
+        </div>
+      </div>
+      <h3> Perdidas </h3>
+      <div *ngFor="let appointment of appointmentsService.missing">
+        <div id="citas" class="card">
+          <div id="section" style="height: 15%; ">
+              <div class="circle" style="margin-left:15px; margin-top: 15px; float:left;">
+                  <img src="../../../assets/images/v53_5.png" alt="doc" style="border-radius: 50%; width:100%;">
+              </div>
+              <div class="right">
+                <h4>{{appointment.name}}</h4>
+                <p> {{appointment.doctor}} </p>
+                <p>{{appointment.location}}</p>
+                <p style="color: #7291FF;"> {{appointment.day}} </p>
+
+              </div>
+          </div>
+        </div>
       </div>
 
 
-    <h1 class="card_title">Medicamentos</h1>
 
-    <div *ngFor="let medicine of medicinesService.medicines">
-      <div id="medicamentos" class="card" style="height:40px;">
-        <div id="section" style=" margin-left:-30px;">
-            <h4 class="left" >{{medicine.time}}</h4>
-            <div class="right">
-                <p style="color: #33B6FF; ">{{medicine.name}}</p>
-                <p>{{medicine.function}}</p>
-            </div>
+
+
+      <h1 class="card_title">Medicamentos</h1>
+      <h3>Pendintes</h3>
+      <div *ngFor="let medicine of medicinesService.pending">
+        <div id="medicamentos" class="card" style="height:40px;">
+          <div id="section" style=" margin-left:-30px;">
+              <h4 class="left" >{{medicine.time}}</h4>
+              <div class="right">
+                  <p style="color: #33B6FF; ">{{medicine.name}}</p>
+                  <p>{{medicine.function}}</p>
+              </div>
+          </div>
+        </div>
+      </div>
+      <h3>Completadas</h3>
+      <div *ngFor="let medicine of medicinesService.completed">
+        <div id="medicamentos" class="card" style="height:40px;">
+          <div id="section" style=" margin-left:-30px;">
+              <h4 class="left" >{{medicine.time}}</h4>
+              <div class="right">
+                  <p style="color: #33B6FF; ">{{medicine.name}}</p>
+                  <p>{{medicine.function}}</p>
+              </div>
+          </div>
+        </div>
+      </div>
+      <h3>Perdidas</h3>
+      <div *ngFor="let medicine of medicinesService.missing">
+        <div id="medicamentos" class="card" style="height:40px;">
+          <div id="section" style=" margin-left:-30px;">
+              <h4 class="left" >{{medicine.time}}</h4>
+              <div class="right">
+                  <p style="color: #33B6FF; ">{{medicine.name}}</p>
+                  <p>{{medicine.function}}</p>
+              </div>
+          </div>
         </div>
       </div>
 
-    </div>
 
 
   <h1 class="card_title">Estado de Ánimo</h1>
@@ -87,10 +158,14 @@
   <div *ngFor="let feeling of feelingsService.feelings">
     <div id="estado_animo" class="card" style="margin-bottom:30px;">
       <div id="section" style="height: 15%;">
+        <p>{{getDate(feeling.day)}}</p>
           <div class="circle" style="margin-left:30px; float:left;" >
-              <img src="../../../assets/images/smile.jpg" alt="doc" style="border-radius: 50%; width:100%;">
+              <img
+              class="feeling-img"
+              src="../../../assets/images/{{feeling.feeling}}.png">
           </div>
           <div class="right" style="margin-top: 8%;">
+
               <h4>Hoy me siento {{feeling.feeling}}</h4>
           </div>
       </div>

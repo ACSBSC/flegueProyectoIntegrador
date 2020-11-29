@@ -205,6 +205,7 @@ html {
 
 }
 
+
 footer{
     position: fixed;
     left: 0;
@@ -241,30 +242,49 @@ footer{
 }
 
 .sys{
-    display:flex; 
+    display:flex;
     justify-content: space-around;
     flex-direction:row;
-    color: black; 
+    color: black;
     font-weight:bolder;
     margin:10px;
 }
 
-.green-circle{
+.info-circle{
     border-radius:50%;
     width: 70px;
     height: 70px;
-    background-color: #88DB91; 
-    color: black; 
+    background-color: pink;
+    color: black;
     font-weight:bolder;
-    align-items: center; 
+    align-items: center;
     flex-direction: column;
     text-align:center;
     margin: 10px;
+}
 
+.normal {
+  background-color: rgb(202,227,101);
+}
+
+.elevado {
+  background-color: rgb(255,223,89);
+}
+
+.alto1{
+  background-color: rgb(255,190,89);
+}
+
+.alto2{
+  background-color: rgb(255,146,76);
+}
+
+.peligro{
+  background-color: rgb(255,15,14);
 }
 
 .p-circle{
-    align-items: center; 
+    align-items: center;
     flex-direction: column;
     text-align:center;
     width: 70px;
