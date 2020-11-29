@@ -69,7 +69,9 @@ export class ResumenCuidadorComponent implements OnInit {
         let array = [];
         for (let key in res) {
           if(res.hasOwnProperty(key)) {
-            array.push(res[key]);
+            if (res[key].user == this.abueId) {
+              array.push(res[key]);
+            }
           }
         }
         this.appointmentsService.pending = array;
@@ -86,7 +88,9 @@ export class ResumenCuidadorComponent implements OnInit {
         let array = [];
         for (let key in res) {
           if(res.hasOwnProperty(key)) {
-            array.push(res[key]);
+            if (res[key].user == this.abueId) {
+              array.push(res[key]);
+            }
           }
         }
         this.appointmentsService.missing = array;
@@ -103,7 +107,9 @@ export class ResumenCuidadorComponent implements OnInit {
         let array = [];
         for (let key in res) {
           if(res.hasOwnProperty(key)) {
-            array.push(res[key]);
+            if (res[key].user == this.abueId) {
+              array.push(res[key]);
+            }
           }
         }
         this.appointmentsService.completed = array;
@@ -162,7 +168,9 @@ export class ResumenCuidadorComponent implements OnInit {
         let array = [];
         for (let key in res) {
           if(res.hasOwnProperty(key)) {
-            array.push(res[key]);
+            if (res[key].user == this.abueId) {
+              array.push(res[key]);
+            }
           }
         }
         this.medicinesService.pending = array;
@@ -179,7 +187,9 @@ export class ResumenCuidadorComponent implements OnInit {
         let array = [];
         for (let key in res) {
           if(res.hasOwnProperty(key)) {
-            array.push(res[key]);
+            if (res[key].user == this.abueId) {
+              array.push(res[key]);
+            }
           }
         }
         this.medicinesService.missing = array;
@@ -196,7 +206,9 @@ export class ResumenCuidadorComponent implements OnInit {
         let array = [];
         for (let key in res) {
           if(res.hasOwnProperty(key)) {
-            array.push(res[key]);
+            if (res[key].user == this.abueId) {
+              array.push(res[key]);
+            }
           }
         }
         this.medicinesService.completed = array;
@@ -213,7 +225,9 @@ export class ResumenCuidadorComponent implements OnInit {
         let array = [];
         for (let key in res) {
           if(res.hasOwnProperty(key)) {
-            array.push(res[key]);
+            if (res[key].user == this.abueId) {
+              array.push(res[key]);
+            }
           }
         }
         this.signsService.signs = array;
