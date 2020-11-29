@@ -71,6 +71,5 @@ import { FirebaseAuthService } from "./services/firebase/firebase-auth.service";
   ],
   providers: [FirebaseService, FirebaseAuthService],
   bootstrap: [AppComponent],
-  schemas: [ CUSTOM_ELEMENTS_SCHEMA]
 })
 export class AppModule { }
