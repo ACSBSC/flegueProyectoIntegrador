@@ -206,10 +206,6 @@ html {
 }
 
 
-#img_footer:hover{
-  background-color: yellow;
-}
-
 footer{
     position: fixed;
     left: 0;
