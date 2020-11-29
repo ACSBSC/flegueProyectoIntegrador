@@ -24,7 +24,7 @@
 				<span class="doc-date">Lunes 16 de septiembre </span>
       </div></a>
       -->
-      <div *ngFor="let appointment of appointmentsService.appointments">
+      <div *ngFor="let appointment of appointmentsService.pending">
         <a routerLink="/appointment-show/{{appointment.id}}">
           <div class="doc-card">
             <div class="doc-img"></div>

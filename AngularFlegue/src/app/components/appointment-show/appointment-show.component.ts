@@ -46,19 +46,27 @@ export class AppointmentShowComponent implements OnInit {
     let newStatus = "completed";
     this.appointmentsService.updateAppointmentStatus(id, newStatus)
     .subscribe(
-      (res) => console.log(res),
+      (res) => {
+        console.log(res);
+        window.location.href = `/appointment`
+
+      },
       (err) => console.log(err)
     )
   }
 
-  
+
   appointmentMissing(id: string) {
     console.log(id, "missing");
     let newStatus = "missing";
     this.appointmentsService.updateAppointmentStatus(id, newStatus)
     .subscribe(
-      (res) => console.log(res),
+      (res) => {
+        console.log(res);
+        window.location.href = `/appointment`
+      },
       (err) => console.log(err)
+
     )
   }
 

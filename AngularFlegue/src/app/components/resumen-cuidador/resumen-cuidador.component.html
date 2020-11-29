@@ -18,51 +18,96 @@
 
       <h1 class="card_title">Signos Vitales</h1>
 
-      <div id="signos_vitales" class="card">
+      <div id="signos_vitales" class="card"
+      *ngFor="let sign of signsService.signs">
         <div>
+          <h4>{{getDate(sign.date)}}</h4>
             <div id="section">
                 <h4 class="left">SYS</h4>
                 <p id="measure">mmHg</p>
 
-                <div class="circle" id="state">120</div>
+                <div class="circle" id="state"
+                [style.background-color]="getColorSys(sign.sys)">
+                {{sign.sys}}</div>
             </div>
 
             <div id="section">
               <h4 class="left">DIA</h4>
               <p id="measure">mmHg</p>
 
-              <div class="circle" id="state">70</div>
+              <div class="circle" id="state"
+              [style.background-color]="getColorDay(sign.day)">
+                {{sign.day}}</div>
           </div>
 
           <div id="section">
               <h4 class="left">PULSO</h4>
               <p id="measure">/min</p>
 
-              <div class="circle" id="state">80</div>
+              <div class="circle" id="state"
+              [style.background-color]="getColorPulse(sign.pulse)">
+              {{sign.pulse}}</div>
           </div>
 
         </div>
       </div>
 
+
       <h1 class="card_title">Citas</h1>
-
-      <div *ngFor="let appointment of appointmentsService.appointments">
-
+      <h3> Pendientes </h3>
+      <div *ngFor="let appointment of appointmentsService.pending">
         <div id="citas" class="card">
           <div id="section" style="height: 15%; ">
               <div class="circle" style="margin-left:15px; margin-top: 15px; float:left;">
-                  <img src="../../../assets/images/perfildoc.jpg" alt="doc" style="border-radius: 50%; width:100%;">
+                  <img src="../../../assets/images/v53_5.png" alt="doc" style="border-radius: 50%; width:100%;">
               </div>
               <div class="right">
-                  <h4>{{appointment.name}}</h4>
-                  <p> {{appointment.doctor}} </p>
-                  <p>{{appointment.location}}</p>
-                  <p style="color: #7291FF;"> {{appointment.day}} </p>
+                <h4>{{appointment.name}}</h4>
+                <p> {{appointment.doctor}} </p>
+                <p>{{appointment.location}}</p>
+                <p style="color: #7291FF;"> {{appointment.day}} </p>
+
               </div>
           </div>
         </div>
-
       </div>
+      <h3> Completadas </h3>
+      <div *ngFor="let appointment of appointmentsService.completed">
+        <div id="citas" class="card">
+          <div id="section" style="height: 15%; ">
+              <div class="circle" style="margin-left:15px; margin-top: 15px; float:left;">
+                  <img src="../../../assets/images/v53_5.png" alt="doc" style="border-radius: 50%; width:100%;">
+              </div>
+              <div class="right">
+                <h4>{{appointment.name}}</h4>
+                <p> {{appointment.doctor}} </p>
+                <p>{{appointment.location}}</p>
+                <p style="color: #7291FF;"> {{appointment.day}} </p>
+
+              </div>
+          </div>
+        </div>
+      </div>
+      <h3> Perdidas </h3>
+      <div *ngFor="let appointment of appointmentsService.missing">
+        <div id="citas" class="card">
+          <div id="section" style="height: 15%; ">
+              <div class="circle" style="margin-left:15px; margin-top: 15px; float:left;">
+                  <img src="../../../assets/images/v53_5.png" alt="doc" style="border-radius: 50%; width:100%;">
+              </div>
+              <div class="right">
+                <h4>{{appointment.name}}</h4>
+                <p> {{appointment.doctor}} </p>
+                <p>{{appointment.location}}</p>
+                <p style="color: #7291FF;"> {{appointment.day}} </p>
+
+              </div>
+          </div>
+        </div>
+      </div>
+
+
+
 
 
     <h1 class="card_title">Medicamentos</h1>
@@ -85,8 +130,12 @@
   <div *ngFor="let feeling of feelingsService.feelings">
     <div id="estado_animo" class="card" style="margin-bottom:0px;">
       <div id="section" style="height: 15%;">
+        <p>{{getDate(feeling.day)}}</p>
+
           <div class="circle" style="margin-left:30px; float:left;">
-              <img src="../../../assets/images/smile.jpg" alt="doc" style="border-radius: 50%; width:100%;">
+            <img
+              class="feeling-img"
+              src="../../../assets/images/{{feeling.feeling}}.png">
           </div>
           <div class="right" style="margin-top: 8%;">
               <h4>Hoy me siento {{feeling.feeling}}</h4>

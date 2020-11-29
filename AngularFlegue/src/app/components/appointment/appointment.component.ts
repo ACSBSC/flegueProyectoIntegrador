@@ -11,12 +11,12 @@ export class AppointmentComponent implements OnInit {
   constructor(public appointmentsService: AppointmentsService) { }
 
   ngOnInit(): void {
-    this.getAppointments();
+    this.getAppointmentsPending();
 
   }
 
-  getAppointments() {
-    this.appointmentsService.getAppointments().subscribe(
+  getAppointmentsPending() {
+    this.appointmentsService.getAppointmentsPending().subscribe(
       res => {
         let array = [];
         for (let key in res) {
@@ -24,7 +24,7 @@ export class AppointmentComponent implements OnInit {
             array.push(res[key]);
           }
         }
-        this.appointmentsService.appointments = array;
+        this.appointmentsService.pending = array;
 
       },
       err => console.error(err)

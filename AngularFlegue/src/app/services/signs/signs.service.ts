@@ -17,6 +17,7 @@ export class SignsService {
 
   URL_API_POST = 'http://localhost:3000/api/post/signs';
   URL_API_LAST_SIGN = "http://localhost:3000/api/get/signs/last";
+  URL_API_GET_ALL = 'http://localhost:3000/api/get/signs/all';
 
   selectedSign: Sign = {
     sys: 0,
@@ -33,7 +34,7 @@ export class SignsService {
     date: ''
   };
 
-  appointments: Sign [] = [];
+  signs: Sign [] = [];
 
   constructor(private http: HttpClient,
     private afAuth: AngularFireAuth) { }
@@ -48,5 +49,11 @@ export class SignsService {
     return this.http.get(`${this.URL_API_LAST_SIGN}/${id}`);
 
   }
+
+  getSigns() {
+    return this.http.get<Sign[]>(this.URL_API_GET_ALL);
+  }
+
+
 
 }

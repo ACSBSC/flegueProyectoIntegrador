@@ -12,6 +12,9 @@ import { AngularFireAuth } from '@angular/fire/auth';
 export class AppointmentsService {
 
   URL_API_GET_ALL = 'http://localhost:3000/api/get/cita/all';
+  URL_API_GET_PEND = 'http://localhost:3000/api/get/cita/pending';
+  URL_API_GET_COM = 'http://localhost:3000/api/get/cita/completed';
+  URL_API_GET_MISS = 'http://localhost:3000/api/get/cita/missing';
   URL_API_POST = 'http://localhost:3000/api/post/cita/';
   URL_API_GET_ID = 'http://localhost:3000/api/get/cita/cita';
   URL_API_DELETE = 'http://localhost:3000/api/delete/cita/cita';
@@ -27,6 +30,9 @@ export class AppointmentsService {
 
   };
   appointments: Appointment[] = [];
+  pending: Appointment[] = [];
+  missing: Appointment[] = [];
+  completed: Appointment[] = [];
 
   response;
 
@@ -37,6 +43,18 @@ export class AppointmentsService {
 
   getAppointments() {
     return this.http.get<Appointment[]>(this.URL_API_GET_ALL);
+  }
+
+  getAppointmentsPending() {
+    return this.http.get<Appointment[]>(this.URL_API_GET_PEND);
+  }
+
+  getAppointmentsMissing() {
+    return this.http.get<Appointment[]>(this.URL_API_GET_MISS);
+  }
+
+  getAppointmentsCompleted() {
+    return this.http.get<Appointment[]>(this.URL_API_GET_COM);
   }
 
   createAppointment(appointment: Appointment) {

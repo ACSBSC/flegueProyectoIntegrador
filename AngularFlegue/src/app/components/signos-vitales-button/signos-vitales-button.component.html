@@ -19,7 +19,7 @@
               <div class="row">
                   <h2 class="subtitle"><label for="fname">SYS</label></h2>
                   <input
-                    type="text"
+                    type="number"
                     id="name"
                     name="sys"
                     placeholder="SYS"
@@ -29,20 +29,22 @@
               <div class="row">
                   <h2 class="subtitle"><label for="subject">DIA</label></h2>
                   <input
-                    type="text"
+                    type="number"
                     id="dia"
                     name="day"
                     placeholder="DIA"
+                    required
                     [(ngModel)]="signsService.selectedSign.day"
                     >
               </div>
               <div class="row">
                   <h2 class="subtitle"><label for="subject">PULSO</label></h2>
                   <input
-                    type="text"
+                    type="number"
                     id="place"
                     name="pulse"
                     placeholder="PULSO"
+                    required
                     [(ngModel)]="signsService.selectedSign.pulse">
               </div>
 
