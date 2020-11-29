@@ -1,3 +1,4 @@
+@import url("https://fonts.googleapis.com/css?family=Roboto&display=swap");
 
 h2{
   font-size: 15px;
@@ -96,6 +97,9 @@ input[type=text],input[type=number],input[type=tel],input[type=email],input[type
     font-size: 22px;
   }
 
+  body{
+    font-family: Roboto;
+  }
   /* Style the container */
   .container {
     border-radius: 5px;
@@ -122,6 +126,10 @@ input[type=text],input[type=number],input[type=tel],input[type=email],input[type
 
   }
 
+  h1, h2{
+    font-family: Roboto;
+  }
+  
   /* Clear floats after the columns */
   .row:after {
     content: "";
@@ -133,7 +141,39 @@ input[type=text],input[type=number],input[type=tel],input[type=email],input[type
     margin-top: 0px;
   }
 
+/* FOOTER */
+#img_footer{
+  display: inline;
+  max-width: 50px;
+  /*background: url("../../assets/images/llamada-de-emergencia.png");*/
 
+}
+
+#img_footer:hover{
+display: inline;
+max-width: 50px;
+/*background: url("../../assets/images/tabla.png");*/
+background-color: yellow;
+
+
+}
+
+/*.icono1{
+background-color: red;
+}
+
+.icono1:hover{
+background-color: yellow;
+}*/
+footer{
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  background-color: white;
+  color: white;
+  text-align: center;
+}
 
   /* Responsive layout - when the screen is less than 600px wide, make the two columns stack on top of each other instead of next to each other */
   @media screen and (max-width: 600px) {

@@ -16,9 +16,9 @@ html {
   border-bottom-right-radius: 80% 50%;
   border-bottom-left-radius: 80% 50%;
 
+  font-size: 35px;
   color:white;
 }
-
 
 /* Style the container */
 .container {
@@ -32,8 +32,6 @@ html {
   font-weight: normal;
 
   line-height: 21px;
-
-
 }
 
 
@@ -146,6 +144,7 @@ html {
   width: 100px;
   height: 100px;
   margin-left: 35%;
+  
 }
 
 .feeling-img {
@@ -182,7 +181,10 @@ html {
     max-width: 50px;
 
 }
-
+#img_icon{
+  width: 70%;
+  margin-top: 10%;
+}
 footer{
     position: fixed;
     left: 0;
