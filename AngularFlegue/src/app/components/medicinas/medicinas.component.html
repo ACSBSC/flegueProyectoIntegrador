@@ -25,7 +25,7 @@
 				<span class="doc-location">Función del medicamento</span><br>
       </div></a>
       -->
-      <div *ngFor="let medicine of medicinesService.medicines">
+      <div *ngFor="let medicine of medicinesService.pending">
         <a routerLink="/medicinas-show/{{medicine.id}}">
           <div class="doc-card">
             <span class="doc-name">{{medicine.name}}</span><br>

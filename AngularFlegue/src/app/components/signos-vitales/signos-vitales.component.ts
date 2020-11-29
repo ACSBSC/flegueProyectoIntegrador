@@ -100,7 +100,4 @@ export class SignosVitalesComponent implements OnInit {
     }
     return color;
   }
-
-
-
 }

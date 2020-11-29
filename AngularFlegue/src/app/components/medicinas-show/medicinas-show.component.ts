@@ -43,7 +43,10 @@ export class MedicinasShowComponent implements OnInit {
     let newStatus = "completed";
     this.medicinesService.updateMedicineStatus(id, newStatus)
     .subscribe(
-      (res) => console.log(res),
+      (res) => {
+        console.log(res)
+        window.location.href = `/medicinas`
+      },
       (err) => console.log(err)
     )
   }
@@ -52,7 +55,10 @@ export class MedicinasShowComponent implements OnInit {
     let newStatus = "missing";
     this.medicinesService.updateMedicineStatus(id, newStatus)
     .subscribe(
-      (res) => console.log(res),
+      (res) => {
+        console.log(res)
+        window.location.href = `/medicinas`
+      },
       (err) => console.log(err)
     )
   }

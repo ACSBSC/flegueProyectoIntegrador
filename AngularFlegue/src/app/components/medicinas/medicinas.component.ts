@@ -12,11 +12,11 @@ export class MedicinasComponent implements OnInit {
   constructor(public medicinesService: MedicinesService) { }
 
   ngOnInit(): void {
-    this.getMedicines();
+    this.getMedicinesPending();
   }
 
-  getMedicines() {
-    this.medicinesService.getMedicines().subscribe(
+  getMedicinesPending() {
+    this.medicinesService.getMedicinesPending().subscribe(
       res => {
         let array = [];
         for (let key in res) {
@@ -24,7 +24,7 @@ export class MedicinasComponent implements OnInit {
             array.push(res[key]);
           }
         }
-        this.medicinesService.medicines = array;
+        this.medicinesService.pending = array;
 
       },
       err => console.error(err)

@@ -29,6 +29,11 @@ export class ResumenCuidadorComponent implements OnInit {
     this.getAppointmentsCompleted();
     this.getAppointmentsMissing();
 
+    this.getMedicinesPending();
+    this.getMedicinesCompleted();
+    this.getMedicinesMissing();
+
+
     this.getAppointments();
     this.getMedicines();
     this.getFeelings();
@@ -132,6 +137,58 @@ export class ResumenCuidadorComponent implements OnInit {
           }
         }
         this.medicinesService.medicines = array;
+
+      },
+      err => console.error(err)
+    )
+
+  }
+
+
+  getMedicinesPending() {
+    this.medicinesService.getMedicinesPending().subscribe(
+      res => {
+        let array = [];
+        for (let key in res) {
+          if(res.hasOwnProperty(key)) {
+            array.push(res[key]);
+          }
+        }
+        this.medicinesService.pending = array;
+
+      },
+      err => console.error(err)
+    )
+
+  }
+
+  getMedicinesMissing() {
+    this.medicinesService.getMedicinesMissing().subscribe(
+      res => {
+        let array = [];
+        for (let key in res) {
+          if(res.hasOwnProperty(key)) {
+            array.push(res[key]);
+          }
+        }
+        this.medicinesService.missing = array;
+
+      },
+      err => console.error(err)
+    )
+
+  }
+
+  getMedicinesCompleted() {
+    this.medicinesService.getMedicinesCompleted().subscribe(
+      res => {
+        let array = [];
+        for (let key in res) {
+          if(res.hasOwnProperty(key)) {
+            array.push(res[key]);
+          }
+        }
+        this.medicinesService.completed = array;
 
       },
       err => console.error(err)

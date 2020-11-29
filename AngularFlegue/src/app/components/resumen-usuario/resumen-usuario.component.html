@@ -109,21 +109,45 @@
 
 
 
-    <h1 class="card_title">Medicamentos</h1>
 
-    <div *ngFor="let medicine of medicinesService.medicines">
-
-      <div id="medicamentos" class="card" style="height:40px;">
-        <div id="section" style=" margin-left:-30px;">
-            <h4 class="left" >{{medicine.time}}</h4>
-            <div class="right">
-                <p style="color: #33B6FF; ">{{medicine.name}}</p>
-                <p>{{medicine.function}}</p>
-            </div>
+      <h1 class="card_title">Medicamentos</h1>
+      <h3>Pendintes</h3>
+      <div *ngFor="let medicine of medicinesService.pending">
+        <div id="medicamentos" class="card" style="height:40px;">
+          <div id="section" style=" margin-left:-30px;">
+              <h4 class="left" >{{medicine.time}}</h4>
+              <div class="right">
+                  <p style="color: #33B6FF; ">{{medicine.name}}</p>
+                  <p>{{medicine.function}}</p>
+              </div>
+          </div>
+        </div>
+      </div>
+      <h3>Completadas</h3>
+      <div *ngFor="let medicine of medicinesService.completed">
+        <div id="medicamentos" class="card" style="height:40px;">
+          <div id="section" style=" margin-left:-30px;">
+              <h4 class="left" >{{medicine.time}}</h4>
+              <div class="right">
+                  <p style="color: #33B6FF; ">{{medicine.name}}</p>
+                  <p>{{medicine.function}}</p>
+              </div>
+          </div>
+        </div>
+      </div>
+      <h3>Perdidas</h3>
+      <div *ngFor="let medicine of medicinesService.missing">
+        <div id="medicamentos" class="card" style="height:40px;">
+          <div id="section" style=" margin-left:-30px;">
+              <h4 class="left" >{{medicine.time}}</h4>
+              <div class="right">
+                  <p style="color: #33B6FF; ">{{medicine.name}}</p>
+                  <p>{{medicine.function}}</p>
+              </div>
+          </div>
         </div>
       </div>
 
-    </div>
 
 
   <h1 class="card_title">Estado de Ánimo</h1>
