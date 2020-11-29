@@ -19,7 +19,7 @@ export class MedicinasComponent implements OnInit {
 
   getMedicinesPending() {
     const userId = Firebase.auth().currentUser.uid;
-    console.log("Uid", userId);
+    console.log("Uid MEDICAMENTOOOSS", userId);
     this.medicinesService.getMedicinesPending().subscribe(
       res => {
         let array = [];

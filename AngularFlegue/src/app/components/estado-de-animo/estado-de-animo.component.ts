@@ -31,7 +31,7 @@ export class EstadoDeAnimoComponent implements OnInit {
     this.feelingsService.createFeeling(output).subscribe(
       res => {
         console.log(res),
-        window.location.href = `/resumen-usuario/`
+        window.location.href = `/`;
       },
       err => console.error(err)
     )

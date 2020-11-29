@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { SignsService } from '../../services/signs/signs.service'
 import * as moment from 'moment';
+import * as Firebase from 'firebase/app';
+
 
 @Component({
   selector: 'app-signos-vitales-historial',
@@ -16,12 +18,16 @@ export class SignosVitalesHistorialComponent implements OnInit {
   }
 
   getSigns() {
+    const userId = Firebase.auth().currentUser.uid;
+    console.log("Uid", userId);
     this.signsService.getSigns().subscribe(
       res => {
         let array = [];
         for (let key in res) {
           if(res.hasOwnProperty(key)) {
-            array.push(res[key]);
+            if (res[key].user == userId) {
+              array.push(res[key]);
+            }
           }
         }
         this.signsService.signs = array;
