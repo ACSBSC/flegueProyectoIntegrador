@@ -1,6 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { AngularFireAuth } from '@angular/fire/auth';
 import { Router } from '@angular/router';
+import { AngularFireDatabase, AngularFireList } from '@angular/fire/database';
+import { from, Observable } from 'rxjs';
+import * as Firebase from 'firebase/app';
 
 @Component({
   selector: 'app-user-delete',
@@ -9,9 +12,12 @@ import { Router } from '@angular/router';
 })
 export class UserDeleteComponent implements OnInit {
 
-  constructor(private auth: AngularFireAuth, private router: Router) { }
-
+  public dinosaurs: Observable<any[]>;
+  constructor(private auth: AngularFireAuth, private router: Router, private db: AngularFireDatabase) { }
+  public itemsRef: AngularFireList<any> = this.db.list(`Cuidador/${Firebase.auth().currentUser.uid}/PersonasMayores`);
   ngOnInit(): void {
+    this.dinosaurs = this.itemsRef.valueChanges();
+    this.dinosaurs.subscribe(v => console.log("v", v));
   }
   logout(){
     this.auth.signOut().then(() => this.router.navigate(['login']));
@@ -30,6 +36,11 @@ export class UserDeleteComponent implements OnInit {
       }
     }); */
     
+  }
+  deleteUser(id){
+    console.log("Holota");
+    
+    Firebase.database().ref(`Cuidador/${Firebase.auth().currentUser.uid}/PersonasMayores/${id}`).remove();
   }
 
 }

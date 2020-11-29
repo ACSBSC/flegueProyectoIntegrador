@@ -49,7 +49,7 @@ const routes: Routes = [
   {path: 'medicinas-edit/:id', component: MedicinasFormEditComponent, canActivate: [AbuelitoGuard]},
   {path: 'medicinas-show/:id', component: MedicinasShowComponent, canActivate: [AbuelitoGuard]},
   {path: 'register', component: RegisterComponent},
-  {path: 'resumen-cuidador', component: ResumenCuidadorComponent, canActivate: [CuidadorGuard]},
+  {path: 'resumen-cuidador/:id', component: ResumenCuidadorComponent, canActivate: [CuidadorGuard]},
   {path: 'resumen-usuario', component: ResumenUsuarioComponent, canActivate: [AbuelitoGuard]},
   {path: 'select-user', component: SelectUserComponent, canActivate: [CuidadorGuard]},
   {path: 'signos-vitales', component: SignosVitalesComponent, canActivate: [AbuelitoGuard]},
@@ -57,7 +57,7 @@ const routes: Routes = [
   {path: 'signos-vitales-historial', component: SignosVitalesHistorialComponent, canActivate: [AbuelitoGuard]},
   {path: 'user-add', component: UserAddComponent, canActivate: [CuidadorGuard]},
   {path: 'user-delete', component: UserDeleteComponent, canActivate: [CuidadorGuard]},
-  {path: 'user-show', component: UserShowComponent, canActivate: [CuidadorGuard]},
+  {path: 'user-show/:id', component: UserShowComponent, canActivate: [CuidadorGuard]},
 ];
 
 @NgModule({

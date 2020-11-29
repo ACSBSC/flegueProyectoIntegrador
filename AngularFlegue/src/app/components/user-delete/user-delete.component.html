@@ -14,23 +14,18 @@
 		<div class="info">
 
 
-			<div class="gran-card">
-				<span class="doc-name">Nombre Abuelo</span>
-        <a routerLink="/select-user"><img src="../../assets/images/cross.svg" alt=""></a>
+
+
+
+			<div *ngFor="let dino of dinosaurs | async">
+				
+				<div class="gran-card">
+					<span class="doc-name">{{dino.email}}</span>
+					<a (click)='deleteUser(dino.id)'><img src="../../assets/images/cross.svg" alt=""></a>
+				</div>
 			</div>
 
-			<div class="gran-card">
-				<span class="doc-name">Nombre Abuelo</span>
-        <a routerLink="/select-user"><img src="../../assets/images/cross.svg" alt=""></a>
-			</div>
-      <div class="gran-card">
-				<span class="doc-name">Nombre Abuelo</span>
-        <a routerLink="/select-user"><img src="../../assets/images/cross.svg" alt=""></a>
-			</div>
-      <div class="gran-card">
-				<span class="doc-name">Nombre Abuelo</span>
-        <a routerLink="/select-user"><img src="../../assets/images/cross.svg" alt=""></a>
-			</div>
+
 
 		</div>
 		<footer>

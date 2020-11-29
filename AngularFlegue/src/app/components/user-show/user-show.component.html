@@ -12,11 +12,12 @@
 
 <div class = "info">
 
-        <a routerLink="/resumen-cuidador">
+        <a routerLink="/resumen-cuidador/{{abue.id}}">
         <div class="doc-card">
             <div id="circulo_azul">
                 <img src="../../../assets/images/persona.png" id="persona_perfil">
-                <span class="doc-name">Nombre del abuelito</span><br>
+                <span class="doc-name">{{abue.name}}</span><br>
+                <span class="doc-name">{{abue.email}}</span><br>
             </div>
 
             <span class="doc-location red-button">Resumen del usuario</span><br>

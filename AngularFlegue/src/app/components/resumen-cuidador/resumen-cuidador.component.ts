@@ -4,6 +4,7 @@ import { MedicinesService } from '../../services/medicines/medicines.service'
 import { FeelingsService } from '../../services/feelings/feelings.service';
 import { AngularFireAuth } from '@angular/fire/auth';
 import { Router } from '@angular/router';
+import { ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-resumen-cuidador',
@@ -12,12 +13,13 @@ import { Router } from '@angular/router';
 })
 export class ResumenCuidadorComponent implements OnInit {
   icon= 'HOLAAA';
-
+  abueId = this.route.snapshot.paramMap.get('id');
   constructor(
     private auth: AngularFireAuth, private router: Router,
     public appointmentsService: AppointmentsService,
     public medicinesService: MedicinesService,
-    public feelingsService: FeelingsService
+    public feelingsService: FeelingsService,
+    private route: ActivatedRoute
   ) { }
 
 
@@ -28,12 +30,16 @@ export class ResumenCuidadorComponent implements OnInit {
   }
 
   getAppointments() {
+    
+
     this.appointmentsService.getAppointments().subscribe(
       res => {
         let array = [];
         for (let key in res) {
           if(res.hasOwnProperty(key)) {
-            array.push(res[key]);
+            if (res[key].user == this.abueId) {
+              array.push(res[key]);
+            }
           }
         }
         this.appointmentsService.appointments = array;
@@ -50,7 +56,9 @@ export class ResumenCuidadorComponent implements OnInit {
         let array = [];
         for (let key in res) {
           if(res.hasOwnProperty(key)) {
-            array.push(res[key]);
+            if (res[key].user == this.abueId) {
+              array.push(res[key]);
+            }
           }
         }
         console.log('array', array);
@@ -69,7 +77,9 @@ export class ResumenCuidadorComponent implements OnInit {
         let array = [];
         for (let key in res) {
           if(res.hasOwnProperty(key)) {
-            array.push(res[key]);
+            if (res[key].user == this.abueId) {
+              array.push(res[key]);
+            }
           }
         }
         this.medicinesService.medicines = array;

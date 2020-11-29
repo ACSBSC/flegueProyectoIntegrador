@@ -9,7 +9,40 @@
               <div class="circle"><img src="../../../assets/images/persona.png" alt="salud" id="img_icon"></div>
         </div>
 
-        <div class="input-pos">
+
+
+
+
+
+
+
+
+
+        
+
+        <form #myForm="ngForm" (ngSubmit)="onSubmit(myForm)" novalidate>
+          <div class="input-pos">
+          <input type="text" name="id" id="agregar_box" placeholder="Id del usuario" ngModel required #id="ngModel">
+          </div>
+      
+          <div class = "info">
+            <input type="submit" value="Listo" class="red-button" >
+          </div>
+        </form>
+
+
+
+
+
+
+
+
+
+
+
+
+
+        <!-- <div class="input-pos">
             <input type="text" id="agregar_box" placeholder="Nombre del usuario">
         </div>
 
@@ -19,7 +52,7 @@
         <a routerLink="/select-user"><div class="red-button">
             <span>Agregar</span>
         </div></a>
-        </div>
+        </div> -->
 
     </div>
       <footer>

@@ -19,23 +19,19 @@
     </div>
 
 
-
-			<a routerLink="/user-show">
-			<div class="doc-card">
-				<p>Nombre de abuelito</p>
-      </div></a>
-      <a routerLink="/user-show">
+    <div *ngFor="let dino of dinosaurs | async">
+      <a routerLink="/user-show/{{dino.id}}">
         <div class="doc-card">
-          <p>Nombre de abuelito</p>
-        </div></a>
-        <a routerLink="/user-show">
-          <div class="doc-card">
-            <p>Nombre de abuelito</p>
-          </div></a>
-          <a routerLink="/user-show">
-            <div class="doc-card">
-              <p>Nombre de abuelito</p>
-            </div></a>
+          <span class="doc-name">{{dino.email}}</span><br>
+          <span class="doc-time">{{dino.name}}</span><br>
+          <span class="doc-location">{{dino.phone}}</span><br>
+        </div>
+      </a>
+    </div>
+
+
+
+			
 
       <div class = "info">
         <a routerLink="/user-add"><div class="red-button">

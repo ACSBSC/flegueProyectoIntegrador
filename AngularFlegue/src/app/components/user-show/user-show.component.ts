@@ -1,6 +1,10 @@
 import { Component, OnInit } from '@angular/core';
 import { AngularFireAuth } from '@angular/fire/auth';
 import { Router } from '@angular/router';
+import { ActivatedRoute } from '@angular/router';
+import * as Firebase from 'firebase/app';
+import { AngularFireDatabase, AngularFireList } from '@angular/fire/database';
+
 
 @Component({
   selector: 'app-user-show',
@@ -8,10 +12,19 @@ import { Router } from '@angular/router';
   styleUrls: ['./user-show.component.css']
 })
 export class UserShowComponent implements OnInit {
-
-  constructor(private auth: AngularFireAuth, private router: Router) { }
-
+  abue;
+  constructor(public route: ActivatedRoute, private auth: AngularFireAuth, private router: Router, private db: AngularFireDatabase) { }
+  
+  
   ngOnInit(): void {
+    const abueId = this.route.snapshot.paramMap.get('id');
+    
+    Firebase.database().ref(`Usuarios/${abueId}`).once('value').then(
+      snaphot => this.abue = snaphot.val()
+    );
+    console.log("abue", this.abue);
+    
+    
   }
   logout(){
     this.auth.signOut().then(() => this.router.navigate(['login']));
