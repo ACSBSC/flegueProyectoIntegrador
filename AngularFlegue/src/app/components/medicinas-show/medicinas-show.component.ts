@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { MedicinesService } from '../../services/medicines/medicines.service'
+import {Router} from '@angular/router'
 
 @Component({
   selector: 'app-medicinas-show',
@@ -13,7 +14,8 @@ export class MedicinasShowComponent implements OnInit {
 
   constructor(
     public route: ActivatedRoute,
-    public medicinesService: MedicinesService) { }
+    public medicinesService: MedicinesService,
+    private router: Router) { }
 
   ngOnInit(): void {
     this.loadMedicine();
@@ -31,7 +33,9 @@ export class MedicinasShowComponent implements OnInit {
     if (confirm('¿Seguro que quieres borrar esta medicina?')) {
       this.medicinesService.deleteMedicine(id)
         .subscribe(
-          (res) => console.log(res),
+          (res) => {
+            this.router.navigate(['/medicinas'])
+          },
           (err) => console.log(err)
 
 
@@ -45,7 +49,7 @@ export class MedicinasShowComponent implements OnInit {
     .subscribe(
       (res) => {
         console.log(res)
-        window.location.href = `/medicinas`
+        this.router.navigate(['/medicinas'])
       },
       (err) => console.log(err)
     )
@@ -57,7 +61,7 @@ export class MedicinasShowComponent implements OnInit {
     .subscribe(
       (res) => {
         console.log(res)
-        window.location.href = `/medicinas`
+        this.router.navigate(['/medicinas'])
       },
       (err) => console.log(err)
     )

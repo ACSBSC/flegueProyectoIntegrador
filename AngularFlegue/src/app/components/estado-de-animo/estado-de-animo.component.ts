@@ -3,6 +3,8 @@ import { FeelingsService } from '../../services/feelings/feelings.service'
 
 import { FirebaseService } from '../../services/firebase/firebase.service'
 import { NgForm } from '@angular/forms';
+import {Router} from '@angular/router'
+
 
 
 @Component({
@@ -14,7 +16,9 @@ export class EstadoDeAnimoComponent implements OnInit {
 
   constructor(
     public feelingsService: FeelingsService,
-    public firebaseService: FirebaseService
+    public firebaseService: FirebaseService,
+    private router: Router
+
     ) { }
 
     user;
@@ -31,7 +35,8 @@ export class EstadoDeAnimoComponent implements OnInit {
     this.feelingsService.createFeeling(output).subscribe(
       res => {
         console.log(res),
-        window.location.href = `/`;
+        this.router.navigate(['/resumen-usuario'])
+
       },
       err => console.error(err)
     )

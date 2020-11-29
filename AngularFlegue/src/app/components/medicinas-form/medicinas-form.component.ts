@@ -3,6 +3,7 @@ import { MedicinesService } from '../../services/medicines/medicines.service';
 import { FirebaseService } from '../../services/firebase/firebase.service'
 import { NgForm } from '@angular/forms';
 import { Appointment } from 'src/app/models/appointment';
+import {Router} from '@angular/router'
 
 @Component({
   selector: 'app-medicinas-form',
@@ -13,7 +14,8 @@ export class MedicinasFormComponent implements OnInit {
 
   constructor(
     public medicinesService: MedicinesService,
-    public firebaseService: FirebaseService
+    public firebaseService: FirebaseService,
+    private router: Router
     ) { }
 
     user;
@@ -30,7 +32,8 @@ export class MedicinasFormComponent implements OnInit {
     this.medicinesService.createMedicine(output).subscribe(
       res => {
         console.log(res),
-        window.location.href = '/medicinas'
+        //window.location.href = '/'
+        this.router.navigate(['/medicinas'])
       },
       err => console.error(err)
     )

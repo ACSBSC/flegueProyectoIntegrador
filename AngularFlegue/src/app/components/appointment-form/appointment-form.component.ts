@@ -7,6 +7,7 @@ import { Observable } from 'rxjs';
 import * as Firebase from 'firebase/app';
 import { AngularFireAuth } from '@angular/fire/auth';
 import { THIS_EXPR } from '@angular/compiler/src/output/output_ast';
+import {Router} from '@angular/router'
 
 
 @Component({
@@ -19,7 +20,9 @@ export class AppointmentFormComponent implements OnInit {
 
   constructor(
     public appointmentsService: AppointmentsService,
-    public firebaseService: FirebaseService
+    public firebaseService: FirebaseService,
+    private router: Router
+
     ) {
   }
 
@@ -37,7 +40,7 @@ export class AppointmentFormComponent implements OnInit {
     this.appointmentsService.createAppointment(output).subscribe(
       res => {
         console.log(res),
-        window.location.href = `/appointment`
+        this.router.navigate(['/appointment'])
       },
       err => console.error(err)
     )

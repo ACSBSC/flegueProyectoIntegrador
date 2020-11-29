@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { AppointmentsService } from '../../services/appointments/appointments.service'
+import {Router} from '@angular/router'
+
 
 @Component({
   selector: 'app-appointment-show',
@@ -13,7 +15,8 @@ export class AppointmentShowComponent implements OnInit {
 
   constructor(
     public route: ActivatedRoute,
-    public appointmentsService: AppointmentsService
+    public appointmentsService: AppointmentsService,
+    private router: Router
   ) { }
 
   ngOnInit(): void {
@@ -35,7 +38,10 @@ export class AppointmentShowComponent implements OnInit {
       console.log('id', id)
       this.appointmentsService.deleteAppointment(id)
         .subscribe(
-          (res) => console.log(res),
+          (res) => {
+            console.log(res)
+            this.router.navigate(['/appointment'])
+          },
           (err) => console.log(err)
         )
     }
@@ -48,7 +54,7 @@ export class AppointmentShowComponent implements OnInit {
     .subscribe(
       (res) => {
         console.log(res);
-        window.location.href = `/appointment`
+        this.router.navigate(['/appointment'])
 
       },
       (err) => console.log(err)
@@ -63,7 +69,8 @@ export class AppointmentShowComponent implements OnInit {
     .subscribe(
       (res) => {
         console.log(res);
-        window.location.href = `/appointment`
+        this.router.navigate(['/appointment'])
+
       },
       (err) => console.log(err)
 
