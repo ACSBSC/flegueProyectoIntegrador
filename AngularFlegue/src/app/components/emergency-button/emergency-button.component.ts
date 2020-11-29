@@ -21,6 +21,7 @@ export class EmergencyButtonComponent implements OnInit {
 
   logout(){
     this.auth.signOut().then(() => this.router.navigate(['login']));
+    //localStorage.removeItem('user');
     //this.firebase.auth().getCurrentUser
     //let user = this.auth.currentUser;
     //console.log(user);
