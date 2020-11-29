@@ -1,12 +1,14 @@
+<link href="https://fonts.googleapis.com/css?family=Roboto&display=swap" rel="stylesheet" />
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 
 <body>
 
   <div class="container">
     <div id="ellipse_blue">
-        <h2 style="margin-top:100px;">Flegue</h2>
-        <h1>Estado de ánimo</h1>
-        <div class="circle"><img src="../../assets/images/felicidad.png" alt="salud" id="img_icon"></div>
-    </div>
+      <h2 style="margin-top:100px;">flegue</h2>
+      <h1 style="margin-top:10px;">Estado de Animo</h1>
+      <div class="circle"><img src="../../assets/images/felicidad.png" alt="salud" id="img_icon"></div>
+</div>
       <div class="info">
         <form #feelingForm="ngForm" (ngSubmit)="addFeeling(feelingForm)">
           <div id="signos_vitales" class="card">
@@ -56,8 +58,8 @@
           </div>
 
           <div class="row">
-            <div class="place">
-                <input type="submit" value="Registrar">
+            <div class="place boton">
+                <input class="boton2" type="submit" value="Registrar">
             </div>
           </div>
         </form>
